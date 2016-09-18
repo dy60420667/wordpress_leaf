@@ -29,7 +29,7 @@
 		<?php the_content(); ?>
 
 		<!--p>本文地址：<a rel="external nofollow" href="<?php esc_url(the_permalink()); ?>"><?php esc_url(the_permalink()); ?></a></p-->
-		<p>转载请注明：《<a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?></a>》</p>
+		<p>转载请注明出处：《<a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?></a>》</p>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( '页面:', 'codilight-lite' ),
@@ -39,10 +39,10 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php codilight_lite_entry_footer(); ?>
+		<?php get_template_part( 'template-parts/content-author' );?>
 
 		<?php get_template_part( 'template-parts/content-cnshare' ); // 调用分享模板
-	?>
+		?>
 
 		<?php
 		$prev_link = get_previous_post_link( '%link', '%title', true );
@@ -64,7 +64,6 @@
 			</div>
 		</div>
 		<?php endif; ?>
-		<?php get_template_part( 'template-parts/content-author' ); 	?>
     <?php get_template_part( 'template-parts/content', 'related' ); ?>
 
 	</footer><!-- .entry-footer -->
