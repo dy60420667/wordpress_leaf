@@ -657,6 +657,9 @@ table.reference td.example_code {
 	vertical-align:bottom
 }
 
+table.reference tr a{
+	text-decoration: underline;
+}
 
 table.browsersupport {
 	border:1px solid #c3c3c3;
