@@ -58,8 +58,7 @@
 			</li>
 			<li class="cnrrssb-reddit small" >
 				<a target="_blank" rel="nofollow" class="jiathis" href="javascript:void(0);" onclick="js_method()" title="更多">
-					
-				<!--a target="_blank" rel="nofollow" href="https://www.douban.com/share/service?href=<?php  echo esc_url( get_permalink() ); ?>&name=<?php the_title(); ?>&text=&image=<?php if ( has_post_thumbnail( ) ) { the_post_thumbnail_url('codilight_lite_single_medium' );} ?>" title="分享到豆瓣网"-->
+
 					<span class="cnrrssb-icon">
 						<i class="fa fa-share-alt"></i>
 
@@ -83,8 +82,8 @@
 <!-- JiaThis Button BEGIN -->
 <!--div id="ckepop">
 <span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_weixin">微信</a> 
+<a class="jiathis_button_weixin">微信</a>
 <a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a> </div--> 
+<a class="jiathis_counter_style"></a> </div-->
 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
 <!--/div--> <!-- JiaThis Button END -->

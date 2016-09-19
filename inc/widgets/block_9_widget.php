@@ -71,6 +71,14 @@ class Codilight_Lite_Widget_Block_9 extends WP_Widget {
 		   $category = get_the_category();
 		   $category_id= $category[0]->term_id;
 
+		   for($x=0;$x<count($category);$x++){
+			   	$mulu_id = $category[$x]->term_id;
+			   	if($mulu_id=='28'){
+			   		continue;
+			   	}
+				$category_id= $category[$x]->term_id;
+		   }
+
 		   $c = get_category($category_id); //默认获取当前所属分类
 		   $category_id = $c->term_id;//当前分类ID
 		   $category_parent = $c->parent; //父分类ID
@@ -107,7 +115,7 @@ class Codilight_Lite_Widget_Block_9 extends WP_Widget {
 		global $wpdb;
 		    $request = "SELECT $wpdb->terms.term_id, name FROM $wpdb->terms ";
 		    $request .= " LEFT JOIN $wpdb->term_taxonomy ON $wpdb->term_taxonomy.term_id = $wpdb->terms.term_id ";
-		    $request .= " WHERE $wpdb->term_taxonomy.parent = '$category_parent' ";
+		    $request .= " WHERE $wpdb->term_taxonomy.parent = '$category_parent' and $wpdb->terms.name <> 'SlideMenu'";
 		    $request .= " ORDER BY term_id asc";
 		    $category_list_1 = $wpdb->get_results($request);
 
