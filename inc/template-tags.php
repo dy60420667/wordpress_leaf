@@ -35,7 +35,10 @@ function codilight_lite_meta_1() {
 
 		echo $byline.$posted_on;
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+
 			echo '<span class="comments-link">';
+			echo '<i class="fa fa-eye"></i>';
+			echo getPostViews(get_the_ID())."°C&nbsp&nbsp&nbsp&nbsp&nbsp";
 			echo '<i class="fa fa-comments-o"></i>';
 			comments_popup_link( '0', '1', '%' );
 			echo '</span>';

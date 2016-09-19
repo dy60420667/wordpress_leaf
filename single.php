@@ -8,10 +8,11 @@
 */
 
 get_header(); ?>
+<?php setPostViews(get_the_ID()); ?>
 
 <div id="content" class="site-content container <?php echo codilight_lite_sidebar_position(); ?>">
 
-	<?php get_template_part( 'template-parts/content-breadcrumb' ); // µ÷ÓÃÃæ°üÐ¼µ¼º½Ä£°å
+	<?php get_template_part( 'template-parts/content-breadcrumb' ); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
 	?>
 	<div class="content-inside">
 		<div id="primary" class="content-area">
