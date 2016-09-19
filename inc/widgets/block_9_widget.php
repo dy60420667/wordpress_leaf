@@ -72,8 +72,8 @@ class Codilight_Lite_Widget_Block_9 extends WP_Widget {
 		   $category_id= $category[0]->term_id;
 
 		   for($x=0;$x<count($category);$x++){
-			   	$mulu_id = $category[$x]->term_id;
-			   	if($mulu_id=='28'){
+			   	$mulu_name = $category[$x]->name;
+			   	if($mulu_name=='SlideMenu'){
 			   		continue;
 			   	}
 				$category_id= $category[$x]->term_id;
