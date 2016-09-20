@@ -40,7 +40,7 @@ function codilight_lite_meta_1() {
 			echo '<i class="fa fa-eye"></i>';
 			echo getPostViews(get_the_ID())."°C&nbsp&nbsp&nbsp&nbsp&nbsp";
 			echo '<i class="fa fa-comments-o"></i>';
-			comments_popup_link( '0', '1', '%' );
+			comments_popup_link( '抢沙发', '1评论', '%评论' );
 			echo '</span>';
 		}
 
