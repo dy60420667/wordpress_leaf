@@ -50,9 +50,9 @@ class Codilight_Lite_Widget_Block_2_Slider extends WP_Widget {
 		$orderby			 = ( ! empty( $instance['orderby'] ) ) ? $instance['orderby'] : 'comment_count';
 		$number_posts        = ( !empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] ) : 5;
 		if ( ! $number_posts ) $number_posts = 5;
-		
 
-     
+
+
 	  $r = new WP_Query( apply_filters( 'widget_block2_posts_args', array(
 			'post_type'           => 'post',
 			'posts_per_page'      => $number_posts,
@@ -93,8 +93,17 @@ class Codilight_Lite_Widget_Block_2_Slider extends WP_Widget {
 					<span class="meta-category">
 						<?php
 						$category = get_the_category();
-						if ( $category[0] ) {
-							echo '<a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
+
+						$temp =0;
+					   for($x=0;$x<count($category);$x++){
+						   	$mulu_name = $category[$x]->name;
+						   	if($mulu_name=='SlideMenu'){
+						   		continue;
+						   	}
+							$temp = $x;
+					   }
+						if ( $category[$temp] ) {
+							echo '<a href="'.get_category_link($category[$temp]->term_id ).'">'.$category[$temp]->cat_name.'</a>';
 						}
 						?>
 					</span>
