@@ -29,7 +29,7 @@
 		<?php the_content(); ?>
 
 		<!--p>本文地址：<a rel="external nofollow" href="<?php esc_url(the_permalink()); ?>"><?php esc_url(the_permalink()); ?></a></p-->
-		<p>转载请注明出处：《<a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?></a>》</p>
+		<p>转载请注明出处：Python在线学习->《<a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?></a>》</p>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( '页面:', 'codilight-lite' ),
