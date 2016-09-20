@@ -38,7 +38,7 @@ Tags:two-columns, left-sidebar, right-sidebar, green, light, responsive-layout, 
 .lightestCOM {
 	color:#E2be75;
 }
-
+#ede6ce  最浅的棕色，用以显示文章页的标题背景
 
 html {
 	font-family: sans-serif;
@@ -389,7 +389,7 @@ h6,
     padding: 10px 20px 9px 10px;
     line-height: 18px;
     border-left: 4px solid #D08823;
-    background-color: #ffffff;
+    background-color: #ede6ce;
 }
 
 /* List
@@ -6133,6 +6133,137 @@ middle-column-home {
 	color:#fff;
 }
 
+/** 点赞打赏  start**/
+.article-social{margin-bottom:10px;padding-top:15px;text-align:center;text-indent:0}
+.article-social a{border-bottom:1px solid #d6d6d6;text-indent:0}
+.article-social a:hover{background:#f17067;border-bottom:1px solid #d6d6d6}
+#Addlike{
+	background-color:#f78585;
+	color:#fff
+}
+#Addlike:hover{
+	background-color:#f17067
+}
+.action{
+	position:relative;
+	padding:8px 40px;
+	display:inline-block;
+	border:1px solid #d6d6d6;
+	border-radius:2px;
+	background-color:#5fcec0;
+	font-size:15px;margin:0 3px;
+	color:#fff
+}
+.action:hover{
+	background-color:#3bbfaf;
+	border-bottom:1px solid #d6d6d6
+}
+.action i,bdsharebuttonbox i{
+	margin-right:5px;font-size:1.1em
+}
+.action.actived{
+	border-color:#ff9790;
+	color:#fff;
+	background-color:#f17067!important
+}
+.action .action-popover{
+	position:absolute;
+	width:249px;
+	padding:5px 0 2px;
+	top:-45px;
+	left:50%;
+	margin-left:-125px;
+	display:none;
+	height:46px
+}
+.action .popover-content{
+	padding:6px 3px 5px 8px
+}
+.action:hover .action-popover{
+	display:block
+}
+.action .popover{
+	display:block;
+	border-radius:4px
+}
+.article-social .or{
+	background:#fff;
+	color:#455670;
+	display:inline-block;
+	padding:5px 12px;
+	font-size:.8725em;
+	position:absolute;
+	z-index:2;
+	margin:4px 0 0 -19px;
+	border-radius:100px;
+	-webkit-border-radius:100px;
+	-moz-border-radius:100px;
+	-o-border-radius:100px
+}
 
+.action {
+    position: relative;
+    padding: 8px 40px;
+    display: inline-block;
+    border: 1px solid #d6d6d6;
+    border-radius: 2px;
+    background-color: #5fcec0;
+    font-size: 15px;
+    margin: 0 3px;
+    color: #fff;
+}
 
+.bdsharebuttonbox a{
+	border-bottom:0;margin-right:3px;width:28px;height:28px;line-height:28px;color: #fff;}
+.bds_renren{background:#94b3eb;}
+.bds_qzone{background:#fac33f;}
+.bds_more{background:#40a57d;}
+.bds_weixin{background:#7ad071;}
+.bds_renren {background: #94b3eb;}
+.tencentweibo {background: #27ccc0;}
+.qq {background: #e74c3c;}
+.sinaweibo { background: #f78585;}
+.bdsharebuttonbox a:hover{background-color:#7fb4ab;color: #fff;border-bottom:0;}
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    display: none;
+    max-width: 262px;
+    padding: 1px;
+    text-align: left;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    white-space: normal;
+}
+.popover.top .arrow {
+    left: 50%;
+    margin-left: -11px;
+    border-bottom-width: 0;
+    border-top-color: #999;
+    border-top-color: rgba(0,0,0,0.25);
+    bottom: -11px;
+}
+
+.popover .arrow {
+    border-width: 11px;
+}
+
+.popover .arrow, .popover .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+/** 点赞打赏  end**/
 
