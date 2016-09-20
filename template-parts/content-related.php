@@ -5,7 +5,7 @@
 
 			<?php
 			global $post;
-			$num=6;//输出6篇文章
+			$num=3;//输出6篇文章
 			//$post_tags = wp_get_post_tags($post->ID);
 			$post_tags = wp_get_post_tags($post->ID);
 			if ($post_tags) {
