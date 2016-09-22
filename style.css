@@ -297,8 +297,8 @@ textarea {
 	font-family:"Microsoft YaHei","WenQuanYi Micro Hei","Open Sans", Arial, sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
-	line-height: 1.6;
-	color: #494949;
+	line-height: 1.7;
+	color: #333;
 }
 
 /* Links
@@ -2682,7 +2682,8 @@ object {
 	position: absolute;
 	top: 50%;
 	right: 10px;
-	margin-top: -14px;
+	margin-top: -5px;
+	margin-right: 0px;
 	height: 0;
 	width: 0;
 	border: 6px solid transparent;
@@ -2690,14 +2691,6 @@ object {
 	border-top-color: rgba(0, 0, 0, 0.3);
 }
 
-.ft-menu ul li.menu-item-has-children > a:after,
-.ft-menu ul li.page_item_has_children > a:after {
-	margin-top: -5px;
-	margin-right: 0px;
-	border-color: transparent;
-	border-left-color: #dddddd;
-	border-left-color: rgba(0, 0, 0, 0.2);
-}
 
 .nav-toggle {
 	display: none;
@@ -4442,15 +4435,7 @@ article.sticky .entry-title:before {
 
 
 
-.entry-content dl,
-.entry-content ol,
-.entry-content p,
-.entry-content pre,
-.entry-content ul {
-    /*font-size: 16px;*/
-    font-size: 14px;
-    line-height: 28px;
-}
+
 
 
 .portal-hd {
