@@ -2556,6 +2556,7 @@ object {
 
 .ft-menu {
 	float: right;
+	position: relative;
 }
 
 .ft-menu ul {
@@ -2564,14 +2565,20 @@ object {
 	top: 100%;
 	left: 0px;
 	z-index: 80;
+	border-top: none;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
+
 
 .ft-menu ul ul {
 	top: 0px;
 	left: 100%;
 	padding-left: 1px;
 	z-index: 90;
+	border-top: 1px solid #e9e9e9;
+	margin-top: -1px;
 }
+
 
 .ft-menu li {
 	position: relative;
@@ -2588,11 +2595,6 @@ object {
 }
 
 
-
-.ft-menu {
-	position: relative;
-	/* Arrows */
-}
 
 .ft-menu:before {
 	content: "";
@@ -2618,15 +2620,8 @@ object {
 	z-index: 10;
 }
 
-.ft-menu ul {
-	border-top: none;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-}
 
-.ft-menu ul ul {
-	border-top: 1px solid #e9e9e9;
-	margin-top: -1px;
-}
+
 
 .ft-menu li {
 	white-space: nowrap;
