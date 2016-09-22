@@ -2569,7 +2569,6 @@ object {
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 
-
 .ft-menu ul ul {
 	top: 0px;
 	left: 100%;
@@ -2579,22 +2578,24 @@ object {
 	margin-top: -1px;
 }
 
-
 .ft-menu li {
 	position: relative;
 	height: 40px;
+	white-space: nowrap;
+	*white-space: normal;
+	-webkit-transition: background .2s;
+	transition: background .2s;
 }
 
 .ft-menu > li {
 	float: left;
 	height: 40px;
+	margin-right: 1px;
 }
 
 .ft-menu li:hover > ul, .ft-menu li.sfHover > ul {
 	display: block;
 }
-
-
 
 .ft-menu:before {
 	content: "";
@@ -2621,42 +2622,6 @@ object {
 }
 
 
-
-
-.ft-menu li {
-	white-space: nowrap;
-	*white-space: normal;
-	-webkit-transition: background .2s;
-	transition: background .2s;
-}
-
-.ft-menu > li {
-	margin-right: 1px;
-}
-
-.ft-menu > li:before {
-	content: "";
-	display: block;
-	height: 100%;
-	width: 1px;
-	position: absolute;
-	bottom: 1px;
-	left: -2px;
-	background: rgba(255, 255, 255, 0.15);
-	z-index: 10;
-}
-
-.ft-menu > li:after {
-	content: "";
-	display: block;
-	height: 100%;
-	width: 1px;
-	position: absolute;
-	bottom: 1px;
-	left: -1px;
-	background: rgba(0, 0, 0, 0.1);
-	z-index: 10;
-}
 
 .ft-menu li:hover {
 	-webkit-transition: none;
