@@ -48,7 +48,16 @@
 
 <div style="display:none">
 <script language="javascript" type="text/javascript" src="http://js.users.51.la/18972419.js"></script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=58687108" charset="UTF-8"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?09da59b50888f910e89ef3fef95351d6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </div>
 
 <script type = "text/javascript" >
