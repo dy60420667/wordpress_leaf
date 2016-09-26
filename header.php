@@ -41,8 +41,8 @@
 					<div class="topbar-right pull-right">
 						<ul class="topbar-elements">
 							<?php do_action( 'codilight_lite_before_topbar_search' ); ?>
-  						
-							
+
+
 							<li class="topbar-search">
 								<a href="javascript:void(0)"><i class="search-icon fa fa-search"></i><span><?php esc_html_e( 'Search', 'codilight-lite' ); ?></span></a>
 								<div class="dropdown-content dropdown-search">

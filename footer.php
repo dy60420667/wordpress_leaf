@@ -40,10 +40,16 @@
 
 <?php wp_footer(); ?>
 <div class="fixed-btn">
-<div id="full" class = "fixed-btn"> 
-	<a><img src="<?php echo get_template_directory_uri().'/assets/images/top.png' ?>" border=0 alt="返回顶部"></a> 
+<div id="full" class = "fixed-btn">
+	<a><img src="<?php echo get_template_directory_uri().'/assets/images/top.png' ?>" border=0 alt="返回顶部"></a>
 </div>
+
 <div>
+
+<div style="display:none">
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/18972419.js"></script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=58687108" charset="UTF-8"></script>
+</div>
 
 <script type = "text/javascript" >
 	var isie6 = window.XMLHttpRequest ? false: true;
@@ -83,7 +89,7 @@
 	}
 	document.getElementById("full").onclick = function() {
 	    window.scrollTo(0, 0)
-	}; 
+	};
 </script>
 
 </body>
