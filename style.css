@@ -2590,7 +2590,6 @@ object {
 .ft-menu > li {
 	float: left;
 	height: 40px;
-	margin-right: 1px;
 }
 
 .ft-menu li:hover > ul, .ft-menu li.sfHover > ul {
@@ -2631,11 +2630,12 @@ object {
 .ft-menu a {
 	color: #FFFFFF;
 	font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
-	padding-left: 22px;
-	padding-right: 22px;
+	padding-left: 20px;
+	padding-right: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	font-size: 13px;
+	font-weight:blod;
+	font-size: 15px;
 	font-weight: 500;
 	letter-spacing: 0.4px;
 	text-transform: capitalize;

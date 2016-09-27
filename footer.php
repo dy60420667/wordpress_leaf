@@ -29,8 +29,7 @@
 
 			<div class="site-info">
 				Copyright &copy; 2015-2016
-		      	<strong><a rel="nofollow"  href="http://www.py40.com/" target="_blank" > python学习</a></strong>&nbsp;
-		    	<strong><a rel="nofollow"  href="http://www.py40.com/" target="_blank">py40.com</a></strong> All Rights Reserved. </div><!-- .site-info -->
+		    	<a rel="nofollow"  href="http://www.py40.com/" target="_blank">py40.com</a> All Rights Reserved. </div><!-- .site-info -->
 
 		</div>
 	</footer><!-- #colophon -->
