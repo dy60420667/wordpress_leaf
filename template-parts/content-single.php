@@ -39,7 +39,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php get_template_part( 'template-parts/content-author' );?>
 
 		<?php get_template_part( 'template-parts/content-cnshare' ); // 调用分享模板
 		?>
