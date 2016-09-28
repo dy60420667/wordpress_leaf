@@ -32,12 +32,12 @@ if ( ! function_exists( 'codilight_lite_excerpt' ) ) :
  */
 function codilight_lite_excerpt( $characters ){
 	//$characters = 70;
-	 
+
 	//获取文章摘要
 	$excerpt = get_the_excerpt();
-	//如果摘要小于10个字符 读取文章内容 
+	//如果摘要小于10个字符 读取文章内容
 	if ((mb_strlen($excerpt,'utf-8') < 10)) $excerpt = get_the_content();
-	
+
 	$excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
 	$excerpt = strip_shortcodes($excerpt);
 	$excerpt = strip_tags($excerpt);
@@ -67,11 +67,13 @@ endif;
  *
  * @param string $characters
  * @return string
+ * 	$links = str_replace('</a> (', '</a><span class="cat-count">', $links);
+	$links = str_replace(')', '</span>', $links);
  */
 add_filter('wp_list_categories', 'codilight_lite_cat_count_inline');
 function codilight_lite_cat_count_inline($links) {
-	$links = str_replace('</a> (', '</a><span class="cat-count">', $links);
-	$links = str_replace(')', '</span>', $links);
+	$links = str_replace('</a> (', ' (', $links);
+	$links = str_replace(')', ')</a>', $links);
 	return $links;
 }
 

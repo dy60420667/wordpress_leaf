@@ -4006,7 +4006,7 @@ article.sticky .entry-title:before {
 }
 
 .widget ul li {
-	margin: 8px 0px;
+	margin: 10px 0px;
 }
 
 .widget .widget-title a {
@@ -4020,21 +4020,13 @@ article.sticky .entry-title:before {
 /* Categories
 --------------------------------------------------------------*/
 .widget_categories ul li {
-	padding-left: 12px;
+	background:url(assets/images/icon_bag.png) no-repeat left top;
+	background-size:15px 15px;
+	padding-left:20px;
+	line-height:1.0;
 	position: relative;
 }
 
-.widget_categories ul li:before {
-	content: "\f105";
-	font-family: FontAwesome;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	color: #494949;
-	position: absolute;
-	top: 2px;
-	left: 0px;
-}
 
 .widget_categories ul li:hover .cat-count {
 	background: #D08823;
@@ -4051,6 +4043,7 @@ article.sticky .entry-title:before {
 	font-size: 11px;
 	font-weight: bold;
 	line-height: 20px;
+	min-width:20px;
 	padding: 0 10px;
 	position: absolute;
 	right: 5px;
