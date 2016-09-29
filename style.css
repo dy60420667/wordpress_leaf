@@ -661,8 +661,8 @@ table.reference th a:active,table.reference th a:hover {
 table.reference td {
 	border:1px solid #d4d4d4;
 	padding:5px;
-	padding-top:7px;
-	padding-bottom:7px;
+	padding-top:3px;
+	padding-bottom:3px;
 	vertical-align:top;
 	font-size: 12px;
 }
@@ -3968,11 +3968,11 @@ article.sticky .entry-title:before {
 /* Widget Stuffs
 --------------------------------------------------------------*/
 .widget-title {
-	font-size: 22px;
-	font-size: 1.3875rem;
-	font-weight: 500;
+	font-size: 18px;
+	font-size: 1.1875rem;
+	font-weight: bold;
 	margin-bottom: 15px;
-	margin-bottom: 0.9375rem;
+	margin-bottom: 0.9075rem;
 }
 
 .widget-title a {
@@ -3984,10 +3984,10 @@ article.sticky .entry-title:before {
 }
 
 .widget {
-	margin-bottom: 41px;
-	margin-bottom: 2.5625rem;
+	margin-bottom: 30px;
+	margin-bottom: 1.5625rem;
 	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 0.85rem;
 }
 
 .widget a {
@@ -4008,6 +4008,11 @@ article.sticky .entry-title:before {
 .widget ul li {
 	margin: 10px 0px;
 }
+
+.widget ul li ul li{
+	margin: 10px 0px 10px -15px;
+}
+
 
 .widget .widget-title a {
 	color: #D08823;
@@ -5823,14 +5828,13 @@ article.sticky .entry-title:before {
 
 .sidebar-notice div.muted {
     border-radius: 3px;
-    margin-top: 15px;
+    margin-top: 10px;
     position: relative;
     min-height: 40px;
     background: #fff !important;
     border: 2px #E2be75 solid !important;
     padding: 8px;
-
-    font-size: 15px;
+    font-size: 14.1px;
 
 }
 
@@ -5866,13 +5870,11 @@ article.sticky .entry-title:before {
     border-radius: 3px;
     margin-top: 15px;
     position: relative;
-    min-height: 40px;
     border-color: rgb(255, 144, 35)!important;
     background-color: rgb(255, 152, 50)!important;
-    padding: 8px;
+    padding: 3px 8px;
     text-align: center;
     font-size: 15px;
-
 }
 
 .sidebar-notice div.title i {
@@ -6068,7 +6070,7 @@ middle-column-home {
     border-bottom: 1px solid #efefef;
     color: #000;
     margin-bottom: 0rem;
-    font-size: 0.9em;
+    font-size: 0.84em;
 }
 
 
