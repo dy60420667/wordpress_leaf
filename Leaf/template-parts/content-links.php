@@ -12,6 +12,7 @@
 					<li><a rel="nofollow" href="http://www.py40.com/"  target="_blank">python在线学习</a> </li>
 					<li><a rel="nofollow" href="http://tools.py40.com/"  target="_blank">PY40在线工具</a> </li>
 					<li><a rel="nofollow" href="http://www.zy80.cn/"  target="_blank">资源之家</a> </li>
+					<li><a rel="nofollow" href="http://work.py40.com/"  target="_blank">程序员驿站</a> </li>
 				</ul>
 			</div>
 		</div>
