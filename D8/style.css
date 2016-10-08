@@ -1,4 +1,4 @@
-/* 
+/*
 	Theme Name: D8
 	Theme URL: http://www.daqianduan.com/theme/d8/
 	Description: 大前端D8主题（付费） 技术支持：<a href="http://www.daqianduan.com">大前端</a>
@@ -180,7 +180,7 @@ a:hover,a:focus{color:#3071A9;text-decoration:none}
 .pagesider-menu .sub-menu{display: none;}
 .pagesider-menu a{margin-bottom: 1px;padding:10px 15px;color:#888;border-left: solid 4px transparent;cursor: pointer;overflow: hidden;border-bottom: 1px solid #EEEEEE;display: block;}
 .pagesider-menu a:hover{background-color:#f7f7f7;color:#666}
-.pagesider-menu li.active a, 
+.pagesider-menu li.active a,
 .pagesider-menu li.current_page_item a,
 .pagesider-menu li.current-menu-item a
 {color:#444;background-color:#fff;border-left-color:#428BCA;margin-right: -1px;position: relative;z-index:2;}
@@ -348,7 +348,7 @@ filter:alpha(opacity=40);}
 .icon-repeat             { background-position: -216px -24px; }
 .icon-refresh            { background-position: -240px -24px; }
 .icon-list-alt           { background-position: -264px -24px; }
-.icon-lock               { background-position: -287px -24px; } 
+.icon-lock               { background-position: -287px -24px; }
 .icon-flag               { background-position: -312px -24px; }
 .icon-headphones         { background-position: -336px -24px; }
 .icon-volume-off         { background-position: -360px -24px; }
@@ -1098,6 +1098,9 @@ filter:alpha(opacity=100);}
 .d_postlist .nopic li a{padding: 8px 15px;}
 .d_postlist .nopic .text{margin-top:0;}
 
+.block9_widget li a{padding:4px 15px 4px 25px;border-bottom:solid 1px #eee;border-left:3px solid transparent;margin-left:-3px;overflow:hidden;position:relative;display:block;font-size:14px}
+.block9_widget li a:hover{background-color:#F8FCFE;border-left-color:#428bca}
+
 
 .d_slidebanner{position:relative}
 .d_slidebanner img{display:block}
@@ -1219,7 +1222,7 @@ pre.prettyprint.linenums {
 }
 .prettyprint.linenums ol,
 pre.prettyprint.linenums ol {
-    margin: 0 0 0 33px; 
+    margin: 0 0 0 33px;
 }
 .prettyprint.linenums ol li,
 pre.prettyprint.linenums ol li {
@@ -1232,16 +1235,16 @@ pre.prettyprint.linenums ol li {
 .prettyprint .com { color: #93a1a1; }
 .prettyprint .lit { color: #AE81FF; }
 .prettyprint .pun,
-.prettyprint .opn, 
+.prettyprint .opn,
 .prettyprint .clo { color: #F8F8F2; }
 .prettyprint .fun { color: #dc322f; }
-.prettyprint .str, 
+.prettyprint .str,
 .prettyprint .atv { color: #E6DB74; }
-.prettyprint .kwd, 
+.prettyprint .kwd,
 .prettyprint .tag { color: #F92659; }
-.prettyprint .typ, 
-.prettyprint .atn, 
-.prettyprint .dec, 
+.prettyprint .typ,
+.prettyprint .atn,
+.prettyprint .dec,
 .prettyprint .var { color: #A6E22E; }
 .prettyprint .pln { color: #66D9EF; }
 
@@ -1378,7 +1381,7 @@ input.search-input{width: 300px;}
 	.excerpt-nothumbnail, .excerpt-nothumbnail:hover{padding: 10px 20px;}
 	.excerpt .focus{float: none;margin-left: 0;text-align: center;margin-bottom: 10px;width: 100%;}
 	.excerpt header h2{font-size: 16px;line-height: 20px;display: block;font-weight: bold;margin-bottom: 10px;}
-	
+
 	.excerpt header{margin-bottom: 5px;margin-right: 0;}
 	.excerpt p.note{color: #999;}
 	.excerpt p .icon12{display: none;}
@@ -1389,7 +1392,7 @@ input.search-input{width: 300px;}
 }
 @media (max-width:480px){
 	input.search-input{width: 100px;}
-	
+
 	.title{padding: 6px 12px;}
 	.navbar .btn.screen-nav{padding:  11px 12px;}
 
@@ -1400,14 +1403,14 @@ input.search-input{width: 300px;}
 
 	.article-header h1{line-height: 30px;font-weight: bold;padding-top: 10px;}
 	.article-header i{display: none;}
-	
+
 	.relates li{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 	.relates a{background: none;padding-left: 0;}
 
 	#submit .icon-ok-circle{display: none;}
 
 	.article-nav{display: none;}
-	
+
 }
 @media (max-width:360px){
 	.navbar{margin-bottom: 0;}
