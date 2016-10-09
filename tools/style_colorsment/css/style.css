@@ -1,0 +1,111 @@
+h2 {
+    display: inline - block
+}
+.section,
+.sub - section,
+.groups {
+    clear: both;
+
+}.section {
+    overflow: hidden;
+    margin: 5em 0
+}.sub - section {
+    overflow: hidden;
+    margin - bottom: 3em
+}.group {
+    font-size: 12px;
+    float: left;
+    margin-top:10px;
+    margin-right: 10px;
+    width: 198px;
+    height: 65px;
+    _display: inline
+}.group span {
+    float: left;
+    margin: 1px;
+    width: 60px;
+    height: 45px;
+    text - align: center
+}.group input {
+    display: block;
+    margin - top: 64px;
+    background: #fff;
+    font - family: "Lucida Console",
+    "Lucida Sans Typewriter",
+    Monaco,
+    "Bitstream Vera Sans Mono",
+    monospace;
+    border: none 0;
+    font - size: 14px;
+    width: 100 % ;
+    text - align: center
+}#panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    height: 100 % ;
+    background: #111;
+    color: #fff;
+    text - shadow: 0 1px 2px#000
+}#header {
+    text - align: center
+}#header h1 {
+    margin: .5em;
+    font - size: 18px;
+    font - weight: normal
+}#header h1 span {
+    display: block;
+    font - size: 40px
+}#header address {
+    clear: both;
+    margin - bottom: 2em;
+    color: #999
+}#header a {
+    color: #999
+}#nav {
+    position: absolute;
+    top: 140px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    overflow: auto;
+    background: #222;
+    _width: 195px;
+    _height: expression(this.parentNode.clientHeight - 155 + "px")
+}#nav h4 {
+    margin: .4em 1em 0;
+    padding: .4em 0;
+    border - bottom: 1px solid#333;
+    color: #aaa
+}#nav a {
+    margin: 0.4em;
+    display: block;
+    padding: .4em.6em;
+    color: #f7f7f7;
+    text - decoration: none
+}#nav a: hover {
+    background: #111;
+    color: #fff
+}: :-webkit - scrollbar {
+    width: 7px
+}: :-webkit - scrollbar - track {
+    background: rgba(0, 0, 0, .1)
+}: :-webkit - scrollbar - thumb {
+    background: rgba(0, 0, 0, .3)
+}#nav: :-webkit - scrollbar - track {
+    background: rgba(255, 255, 255, .1)
+}#nav: :-webkit - scrollbar - thumb {
+    background: rgba(255, 255, 255, .3)
+}.aside {
+    margin: 50px auto 0;
+    width: 728px;
+}.morelinks {
+    text - align: center;
+    color: #999;
+    margin: 50px 0;
+    text - decoration: none;
+}.morelinks a {
+    color: #666;
+}
