@@ -62,9 +62,12 @@ class Codilight_Lite_Widget_Block_9 extends WP_Widget {
 		$ignore_sticky = isset ($instance['ignore_sticky']) ? $instance['ignore_sticky'] : 1;
 		$orderby = (!empty ($instance['orderby'])) ? $instance['orderby'] : 'date';
 		$number_posts = (!empty ($instance['number_posts'])) ? absint($instance['number_posts']) : 4;
-		if (!$number_posts)
+		if (!$number_posts){
 			$number_posts = 4;
+		}
 
+
+		$order = 'desc';
 		if (is_category()) {
 
 			global $cat;
@@ -73,6 +76,12 @@ class Codilight_Lite_Widget_Block_9 extends WP_Widget {
 
 			$title_auto = $c->name;
 			$featured_categories = $c->term_id;
+			$slug = $c->slug;//别名
+
+			if(strstr($slug,'asc')){
+				$order = 'asc';
+			}
+
 
 			$r = new WP_Query(apply_filters('widget_block4_posts_args', array (
 				'post_type' => 'post',
@@ -80,10 +89,9 @@ class Codilight_Lite_Widget_Block_9 extends WP_Widget {
 				'cat' => $featured_categories,
 				'post_status' => 'publish',
 				'orderby' => $orderby,
-				'order' => 'ASC',
+				'order' => $order,
 				'ignore_sticky_posts' => $ignore_sticky
 			)));
-
 		}
 		elseif (is_single()) {
 
@@ -91,23 +99,29 @@ class Codilight_Lite_Widget_Block_9 extends WP_Widget {
 			$featured_categories = wp_get_post_categories($post->ID);
 			$category = get_the_category();
 			$title_auto = $category[0]->cat_name;
+			$slug = $category[0]->category_nicename;
+
+			if(strstr($slug,'asc')){
+				$order = 'asc';
+			}
+
 			$r = new WP_Query(apply_filters('widget_block4_posts_args', array (
 				'post_type' => 'post',
 				'posts_per_page' => $number_posts,
 				'category__in' => $featured_categories,
 				'post_status' => 'publish',
 				'orderby' => $orderby,
-				'order' => 'ASC',
+				'order' => $order,
 				'ignore_sticky_posts' => $ignore_sticky
 			)));
 
 		}
 		if (empty ($title))
 			$title = $title_auto;
-		if ($r->have_posts())
-			:
-?>
-					<?php echo $args['before_widget']; ?>
+		if ($r->have_posts()):
+		?>
+					<?php echo $args['before_widget'];
+					?>
 
 			        <?php if ( $title ) echo $args['before_title'] . $title . $args['after_title']; ?>
 
