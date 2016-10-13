@@ -2,7 +2,7 @@
 <?php if( dopt('d_adindex_01_b') ) printf('<div class="banner banner-navbar">'.dopt('d_adindex_01').'</div>'); ?>
 <div class="content-wrap">
 	<div class="content">
-	<?php 
+	<?php
 		if( dopt('d_adindex_03_b') ) printf('<div class="banner banner-contenttop">'.dopt('d_adindex_03').'</div>');
 
 		if( $paged && $paged > 1 ){
@@ -18,7 +18,7 @@
 		    'paged' => $paged
 		);
 		query_posts($args);
-		include 'modules/excerpt.php'; 
+		include 'modules/excerpt.php';
 	?>
 	</div>
 </div>

@@ -27,7 +27,7 @@ class d_postlist extends WP_Widget {
 		if( $more!='' && $link!='' ) $mo='<a class="btn btn-primary" href="'.$link.'">'.$more.'</a>';
 		if( !$img ) $style = ' class="nopic"';
 		echo $before_widget;
-		echo $before_title.$mo.$title.$after_title; 
+		echo $before_title.$mo.$title.$after_title;
 		echo '<ul'.$style.'>';
 		echo dtheme_posts_list( $orderby,$limit,$cat,$img );
 		echo '</ul>';
@@ -82,7 +82,7 @@ class d_postlist extends WP_Widget {
 				<input style="vertical-align:-3px;margin-right:4px;" class="checkbox" type="checkbox" <?php checked( $instance['img'], 'on' ); ?> id="<?php echo $this->get_field_id('img'); ?>" name="<?php echo $this->get_field_name('img'); ?>">显示图片
 			</label>
 		</p>
-		
+
 	<?php
 	}
 }
@@ -97,11 +97,11 @@ function dtheme_posts_list($orderby,$limit,$cat,$img) {
 		'caller_get_posts' => 1
 	);
 	query_posts($args);
-	while (have_posts()) : the_post(); 
+	while (have_posts()) : the_post();
 ?>
-<li><a href="<?php the_permalink(); ?>"><?php if( $img ){echo '<span class="thumbnail">'; echo deel_thumbnail(); echo '</span>'; }else{$img = '';} ?><span class="text"><?php the_title(); ?></span><span class="muted"><?php the_time('Y-m-d');?></span><span class="muted"><?php comments_number('', '1评论', '%评论'); ?></span></a></li>
+<li><a href="<?php the_permalink(); ?>"><?php if( $img ){echo '<span class="thumbnail"><img  style="display:block;width:73px;height:50px;max-width:100%; max-height:100%;"  src= "'; echo post_thumbnail_src(); echo '" ></span>'; }else{$img = '';} ?><span class="text"><?php the_title(); ?></span><span class="muted"><?php the_time('Y-m-d');?></span><span class="muted"><?php comments_number('', '1评论', '%评论'); ?></span></a></li>
 <?php
-	
+
     endwhile; wp_reset_query();
 }
 

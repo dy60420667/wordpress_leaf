@@ -1,12 +1,12 @@
 <?php if( dopt('d_adindex_02_b') ) printf('<div class="banner banner-sticky">'.dopt('d_adindex_02').'</div>'); ?>
-<?php  
+<?php
 $_author = dopt('d_post_author_b');
 $_time = dopt('d_post_time_b');
 $_views = dopt('d_post_views_b');
 $_comment = dopt('d_post_comment_b');
 ?>
 <?php while ( have_posts() ) : the_post(); ?>
-<?php  
+<?php
 $_thumbnail = false;
 if( has_post_thumbnail() || !dopt('d_thumbnail_b') ){
 	$_thumbnail = true;
@@ -17,7 +17,7 @@ if( has_post_thumbnail() || !dopt('d_thumbnail_b') ){
 	<div class="focus"><a href="<?php the_permalink(); ?>" class="thumbnail"><?php deel_thumbnail(); ?></a></div>
 	<?php } ?>
 	<header>
-		<?php  
+		<?php
 			if( !is_category() ) {
 				$category = get_the_category();
 		        if($category[0]){
@@ -33,13 +33,13 @@ if( has_post_thumbnail() || !dopt('d_thumbnail_b') ){
 	<?php } ?>
 	<?php if( !$_time ){ ?><span class="muted"><i class="icon-time icon12"></i> <?php echo timeago( get_gmt_from_date(get_the_time('Y-m-d G:i:s')) ) ?></span><?php } ?>
 	<?php if( !$_views ){ ?><span class="muted"><i class="icon-eye-open icon12"></i> <?php deel_views('浏览'); ?></span><?php } ?>
-	<?php if( !$_comment ){ ?><span class="muted"><i class="icon-comment icon12"></i> <?php 
-			if ( comments_open() ) echo '<a href="'.get_comments_link().'">'.get_comments_number('0', '1', '%').'评论</a>';
+	<?php if( !$_comment ){ ?><span class="muted"><i class="icon-comment icon12"></i> <?php
+			if ( comments_open() ) echo '<a href="'.get_comments_link().'">'.get_comments_number('0', '1', '%').' 评论</a>';
 		?></span></p><?php } ?>
 	<p class="note">
-		<?php 
+		<?php
 		if( !post_password_required() ){
-			echo deel_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 125, '...'); 
+			echo deel_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 125, '...');
 		}else{
 			echo '密码保护文章，暂无摘要！';
 		}

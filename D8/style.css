@@ -1418,3 +1418,50 @@ input.search-input{width: 300px;}
 	.navbar .menu{display: none;}
 	.banner-navbar, .banner-site{margin-bottom: 0;}
 }
+
+
+able.reference,table.tecspec {
+	border-collapse:collapse;
+	width:100%;
+	margin-bottom:4px;
+	margin-top:4px
+}
+table.reference tr:nth-child(odd) {
+	background-color:#f6f4f0
+}
+table.reference tr:nth-child(even) {
+	background-color:#fff
+}
+table.reference tr.fixzebra {
+	background-color:#f6f4f0
+}
+table.reference th {
+	color:#fff;
+	background-color:#555;
+	border:1px solid #555;
+	font-size:12px;
+	padding:3px;
+	vertical-align:top;
+	text-align:left
+}
+table.reference th a:link,table.reference th a:visited {
+	color:#fff
+}
+table.reference th a:active,table.reference th a:hover {
+	color:#ee872a
+}
+table.reference td {
+	border:1px solid #d4d4d4;
+	padding:5px;
+	padding-top:3px;
+	padding-bottom:3px;
+	vertical-align:top;
+	font-size: 12px;
+}
+table.reference td.example_code {
+	vertical-align:bottom
+}
+
+table.reference tr a{
+	text-decoration: underline;
+}
