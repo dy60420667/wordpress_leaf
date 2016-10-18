@@ -1035,7 +1035,7 @@ filter:alpha(opacity=100);}
 
 .widget_text ul{overflow:hidden;padding:10px 0 5px;color:#bbb}
 .widget_text li{float:left;width:50%;margin-bottom: 5px;}
-.widget_text li a{margin-left:15px}
+.widget_text li a{margin-left:15px;target:_blank}
 .widget_text li ul{padding:0 0 0 15px}
 .widget_text li li{float:none;width:auto}
 
