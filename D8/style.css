@@ -629,7 +629,7 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .navbar .logo a{height:40px;display:block;color:#fff;overflow:hidden}
 .navbar .nav{position:relative;left:0;display:block;float:left;margin:0 10px 0 0;font-size:14px;height:40px}
 .navbar .nav.pull-right{float:right;margin-right:0}
-.navbar .nav > li{position:relative;float:left;margin-right:1px}
+.navbar .nav > li{position:relative;float:left;background: url(img/line_red.png) no-repeat 100% 0;}
 .navbar .nav li a{padding:10px 20px;color:#eeeeee}
 .navbar .nav .dropdown-toggle .caret{margin-top:8px}
 .navbar .nav li a:focus,.navbar .nav li a:hover{background-color:#404040;color:#ffffff}
