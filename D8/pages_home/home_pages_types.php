@@ -1,4 +1,5 @@
 <?php
+
 function echoItem($type) {
 	$filename = "";
 	if ($type == 'pmdaniu') {
@@ -11,7 +12,6 @@ function echoItem($type) {
 	$contents = stream_get_contents($handle);
 	fclose($handle);
 	echo $contents;
-
 	return;
 }
 ?>
