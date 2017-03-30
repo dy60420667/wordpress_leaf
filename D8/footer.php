@@ -1,7 +1,7 @@
 </section>
 <?php
-include (TEMPLATEPATH . '/webitems/webecho.php');?>
-<?php
+
+include_once (TEMPLATEPATH . '/webitems/item_footer.php');
 echoFooter();
 wp_footer();
 if (dopt('d_footcode_b'))

@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <title><?php wp_title('-', true, 'right'); echo get_option('blogname'); if (is_home ()) echo get_option('blogdescription'); if ($paged > 1) echo '-Page ', $paged; ?></title>
 <?php
-$sr_1 = 0; $sr_2 = 0; $commenton = 0; 
-if( dopt('d_sideroll_b') ){ 
+$sr_1 = 0; $sr_2 = 0; $commenton = 0;
+if( dopt('d_sideroll_b') ){
     $sr_1 = dopt('d_sideroll_1');
     $sr_2 = dopt('d_sideroll_2');
 }
-if( is_singular() ){ 
+if( is_singular() ){
     if( comments_open() ) $commenton = 1;
 }
 ?>
@@ -35,10 +35,10 @@ window._deel = {
     }
 }
 </script>
-<?php 
+<?php
 wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '3.0' );
-wp_head(); 
-if( dopt('d_headcode_b') ) echo dopt('d_headcode'); 
+wp_head();
+if( dopt('d_headcode_b') ) echo dopt('d_headcode');
 $style = '';
 if( dopt('article_content_fontsize') ){
 	$lineheight = '';
@@ -60,11 +60,12 @@ echo '<style>'.$style.'</style>';
 </head>
 <body <?php body_class(); ?>>
 <div class="navbar-wrap">
-<div class="navbar">
-		<?php 
-		$logoTagName = is_home() ? 'h1' : 'div';
-		echo '<'.$logoTagName.' class="logo"><a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'-'.get_bloginfo('description').'">'.get_bloginfo('name').'</a></'.$logoTagName.'>'."\n";
+		<?php
+			include (TEMPLATEPATH . '/webitems/item_header.php');
+			echoHeader();
 		?>
+<div class="navbar">
+
 		<ul class="nav">
 			<?php echo str_replace("</ul></div>", "", ereg_replace("<div[^>]*><ul[^>]*>", "", wp_nav_menu(array('theme_location' => 'nav', 'echo' => false)) )); ?>
 		</ul>
@@ -90,22 +91,22 @@ echo '<style>'.$style.'</style>';
 </div>
 <header class="header">
 	<div class="speedbar">
-		<?php 
-		if( dopt('d_sign_b') ){ 
-			global $current_user; 
+		<?php
+		if( dopt('d_sign_b') ){
+			global $current_user;
 			get_currentuserinfo();
 			$uid = $current_user->ID;
 			$u_name = get_user_meta($uid,'nickname',true);
 		?>
 			<div class="pull-right">
 				<?php if(is_user_logged_in()){
-					echo '<i class="icon-user icon12"></i> '.$u_name.' &nbsp; '; 
+					echo '<i class="icon-user icon12"></i> '.$u_name.' &nbsp; ';
 					echo '<a href="'.site_url('/wp-admin').'" target="_blank">后台管理</a>';
 					echo ' &nbsp; &nbsp; <i class="icon-off icon12"></i> ';
 				}else{
 					echo '<i class="icon-user icon12"></i> ';
-				}; 
-				wp_loginout(); 
+				};
+				wp_loginout();
 				?>
 			</div>
 		<?php } ?>
