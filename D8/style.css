@@ -632,8 +632,8 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .navbar .nav > li{position:relative;float:left;background: url(img/line_red.png) no-repeat 100% 0;}
 .navbar .nav li a{padding:10px 20px;color:#eeeeee}
 .navbar .nav .dropdown-toggle .caret{margin-top:8px}
-.navbar .nav li a:focus,.navbar .nav li a:hover{background-color:#404040;color:#ffffff}
-.navbar .nav .active a,.navbar .nav .active a:hover,.navbar .nav .active a:focus{color:#ffffff;background-color:#404040}
+.navbar .nav li a:focus,.navbar .nav li a:hover{background-color:#FF4300;color:#ffffff}
+.navbar .nav .active a,.navbar .nav .active a:hover,.navbar .nav .active a:focus{color:#ffffff;background-color:#FF4300}
 .navbar .nav li.current-menu-item a,.navbar .nav li.current-menu-parent a,.navbar .nav li.current_page_item a,.navbar .nav li.current-post-ancestor a{color:#fff;position:relative;z-index:2}
 .navbar .nav li:hover > ul{display:block}
 .navbar .nav > li > ul{padding-bottom:10px;text-align:left;position:absolute;top:40px;left:0;min-width:150px;z-index:10;display:none;font-size:12px}
