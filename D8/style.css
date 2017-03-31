@@ -1652,3 +1652,36 @@ table.reference tr a{
     min-height: 70px;
 }
 
+.hdc h2 {
+    display: inline;
+    position: absolute;
+    bottom: 20px;
+    margin-left:50px;
+}
+.topintro{
+    margin-right: -2px;
+    padding-bottom:10px;
+    padding-left:15px;
+    padding-right:16px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+}
+
+.topintro ul {
+    margin: 0 0 16px 26px;
+}
+
+.topintro ul li {
+    background: url(data:image/gif;base64,R0lGODlhDQAFAKIAAKOjo6GhoampqYSEhJWVlZ2dnZmZmXx8fCH5BAAAAAAALAAAAAANAAUAAAMVKLfcB6PIScsZJuttLvlgSByK4wQJADs=) no-repeat 0 10px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+
+.topintro img{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    float:left;
+}
+

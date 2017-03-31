@@ -10,6 +10,9 @@ function echoHeader() {
 	if (strstr($current_url, "paoquba.com")) {
 		$filename = TEMPLATEPATH . '/webitems/header_paoquba.html';
 	}
+	if (strstr($current_url, "py40.com")) {
+		$filename = TEMPLATEPATH . '/webitems/header_py40.html';
+	}
 
 	if($filename){
 		$handle = fopen($filename, "r");

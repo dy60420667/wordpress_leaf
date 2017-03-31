@@ -3,7 +3,7 @@
 $themename = $dname.'主题';
 
 $options = array(
-    "d_description", "d_keywords", "d_tui", "d_logo_w", "d_sticky_b", "d_sticky_count", "d_linkpage_cat", "d_tougao_b", "d_tougao_time", "d_tougao_mailto", "d_avatar_b", "d_avatarDate", "d_sideroll_b", "d_sideroll_1", "d_sideroll_2", "d_pingback_b", "d_autosave_b", "d_tqq_b", "d_tqq", "d_weibo_b", "d_weibo", "d_facebook_b", "d_facebook", "d_twitter_b", "d_twitter", "d_rss", "d_bdshare", "d_maillist_b", "d_maillist", "d_track_b", "d_track", "d_headcode_b", "d_headcode", "d_footcode_b", "d_footcode", "d_adsite_01_b", "d_adsite_01", "d_adindex_02_b", "d_adindex_02", "d_adindex_01_b", "d_adindex_01", "d_adindex_03_b", "d_adindex_03", "d_adpost_01_b", "d_adpost_01", "d_adpost_02_b", "d_adpost_02", "d_adpost_03_b", "d_adpost_03", "d_sign_b", "d_jquerybom_b", "d_ajaxpager_b", "d_thumbnail_b", "d_bdshare_b", "d_related_count", "d_post_views_b", "d_post_author_b", "d_post_comment_b", "d_post_time_b",
+    "d_description", "d_keywords", "d_tui", "d_logo_w", "d_sticky_b","d_topintro_b", "d_topintro","d_sticky_count", "d_linkpage_cat", "d_tougao_b", "d_tougao_time", "d_tougao_mailto", "d_avatar_b", "d_avatarDate", "d_sideroll_b", "d_sideroll_1", "d_sideroll_2", "d_pingback_b", "d_autosave_b", "d_tqq_b", "d_tqq", "d_weibo_b", "d_weibo", "d_facebook_b", "d_facebook", "d_twitter_b", "d_twitter", "d_rss", "d_bdshare", "d_maillist_b", "d_maillist", "d_track_b", "d_track", "d_headcode_b", "d_headcode", "d_footcode_b", "d_footcode", "d_adsite_01_b", "d_adsite_01", "d_adindex_02_b", "d_adindex_02", "d_adindex_01_b", "d_adindex_01", "d_adindex_03_b", "d_adindex_03", "d_adpost_01_b", "d_adpost_01", "d_adpost_02_b", "d_adpost_02", "d_adpost_03_b", "d_adpost_03", "d_sign_b", "d_jquerybom_b", "d_ajaxpager_b", "d_thumbnail_b", "d_bdshare_b", "d_related_count", "d_post_views_b", "d_post_author_b", "d_post_comment_b", "d_post_time_b",
     "t_appkey_tqq",
     "t_appkey_tsina",
     "t_appkey_t163",
@@ -20,7 +20,7 @@ function mytheme_add_admin() {
     if ( $_GET['page'] == basename(__FILE__) ) {
         if ( 'save' == $_REQUEST['action'] ) {
             foreach ($options as $value) {
-                update_option( $value, $_REQUEST[ $value ] ); 
+                update_option( $value, $_REQUEST[ $value ] );
             }
             header("Location: admin.php?page=d8.php&saved=true");
             die;
@@ -101,6 +101,15 @@ function mytheme_admin() {
         </td>
     </tr>
     <tr>
+        <td class="d_tit">首页置顶说明</td>
+        <td>
+            <label class="checkbox inline">
+                <input type="checkbox" id="d_topintro_b" name="d_topintro_b" <?php if(dopt('d_topintro_b')) echo 'checked="checked"' ?>>开启
+            </label>
+            <textarea name="d_topintro" id="d_topintro" type="textarea" rows="4"><?php echo dopt('d_topintro'); ?></textarea>
+        </td>
+    </tr>
+    <tr>
         <td class="d_tit">导航固定在顶部</td>
         <td>
             <label class="checkbox inline">
@@ -138,13 +147,13 @@ function mytheme_admin() {
         <td>
             <label class="checkbox inline">
                 <input type="checkbox" id="d_post_views_b" name="d_post_views_b" <?php if(dopt('d_post_views_b')) echo 'checked="checked"' ?>>不显示访客数
-            </label> &nbsp; &nbsp; 
+            </label> &nbsp; &nbsp;
             <label class="checkbox inline">
                 <input type="checkbox" id="d_post_author_b" name="d_post_author_b" <?php if(dopt('d_post_author_b')) echo 'checked="checked"' ?>>不显示作者
-            </label> &nbsp; &nbsp; 
+            </label> &nbsp; &nbsp;
             <label class="checkbox inline">
                 <input type="checkbox" id="d_post_comment_b" name="d_post_comment_b" <?php if(dopt('d_post_comment_b')) echo 'checked="checked"' ?>>不显示评论数
-            </label> &nbsp; &nbsp; 
+            </label> &nbsp; &nbsp;
             <label class="checkbox inline">
                 <input type="checkbox" id="d_post_time_b" name="d_post_time_b" <?php if(dopt('d_post_time_b')) echo 'checked="checked"' ?>>不显示时间
             </label>
@@ -194,7 +203,7 @@ function mytheme_admin() {
             </label>
             <label class="d_number">
                 缓存
-                <input class="d_num " name="d_avatarDate" id="d_avatarDate" type="number" value="<?php if( dopt('d_avatarDate') ) echo dopt('d_avatarDate'); else echo '15'; ?>"> 天 
+                <input class="d_num " name="d_avatarDate" id="d_avatarDate" type="number" value="<?php if( dopt('d_avatarDate') ) echo dopt('d_avatarDate'); else echo '15'; ?>"> 天
                 &nbsp; &nbsp;
                 开启后请确保网站根目录（与wp-content平级）有avatar文件夹，且权限设置成777
                 <br>
@@ -239,7 +248,7 @@ function mytheme_admin() {
             </label>
         </td>
     </tr>
-    
+
     <tr>
         <td class="d_tit">腾讯微博</td>
         <td>
@@ -399,7 +408,7 @@ function mytheme_admin() {
             <textarea name="d_adpost_03" id="d_adpost_03" type="textarea" rows=""><?php echo dopt('d_adpost_03'); ?></textarea>
         </td>
     </tr>
-    
+
     <tr>
         <td class="d_tit"></td>
         <td>
