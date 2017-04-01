@@ -513,4 +513,5 @@ function deel_comment_list($comment, $args, $depth) {
   echo '</div>';
 }
 
+
 ?>
