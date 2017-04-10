@@ -160,7 +160,13 @@ a:hover,a:focus{color:#3071A9;text-decoration:none}
 .sidebar{float:left;margin-left:-360px;width:360px;position:relative}
 .footer{clear:both;position:relative;z-index:1;border-top: 1px solid #FF8800;}
 .trackcode{float:right}
-.footer-inner{padding:16px 20px 14px;color:#aaa;background-color:#ffffff;*zoom:1;text-align:center}
+.footer-inner{
+	padding:16px 20px 14px;
+	color:#aaa;
+	background-color:#ffffff;
+	*zoom:1;
+	text-align:center;
+}
 .footer-inner:before,.footer-inner:after{display:table;content:"";line-height:0}
 .footer-inner:after{clear:both}
 .footer a{color:#aaa}
