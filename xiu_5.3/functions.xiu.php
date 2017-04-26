@@ -3,7 +3,7 @@
 
 
 
-/* 
+/*
  * define
  * ====================================================
 */
@@ -55,7 +55,7 @@ remove_filter( 'wp_mail'             ,  'wp_staticize_emoji_for_email');
 
 
 
-/* 
+/*
  * delete google fonts
  * ====================================================
 */
@@ -66,16 +66,16 @@ if (!function_exists('remove_wp_open_sans')) :
         wp_register_style( 'open-sans', false );
     }
     add_action('wp_enqueue_scripts', 'remove_wp_open_sans');
- 
+
     // Uncomment below to remove from admin
     // add_action('admin_enqueue_scripts', 'remove_wp_open_sans');
 endif;
 
-function remove_open_sans() {    
-    wp_deregister_style( 'open-sans' );    
-    wp_register_style( 'open-sans', false );    
-    wp_enqueue_style('open-sans','');    
-}    
+function remove_open_sans() {
+    wp_deregister_style( 'open-sans' );
+    wp_register_style( 'open-sans', false );
+    wp_enqueue_style('open-sans','');
+}
 add_action( 'init', 'remove_open_sans' );
 
 
@@ -85,7 +85,7 @@ function hui_breadcrumbs(){
     if( !is_single() ) return false;
     $categorys = get_the_category();
     $category = $categorys[0];
-    
+
     return '<span class="text-muted">当前位置：</span><a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> <small>></small> '.get_category_parents($category->term_id, true, ' <small>></small> ').'<span class="text-muted">'.(!_hui('breadcrumbs_single_text')?get_the_title():'正文').'</span>';
 }
 
@@ -102,7 +102,7 @@ function hui_breadcrumbs(){
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 
-/* 
+/*
  * languages
  * ====================================================
 */
@@ -116,7 +116,7 @@ if( is_admin() ){
     require_once THEME_FILES . '/functions.admin.php';
 }
 
-/* 
+/*
  * no categoty
  * ====================================================
 */
@@ -156,7 +156,7 @@ function hui_moloader($name = '', $apply = true) {
 // print_r( get_option('WPLANG') );
 
 
-/* 
+/*
  * widgets
  * ====================================================
 */
@@ -169,7 +169,7 @@ if( _hui('layout') !== 'ui-c2' ){
             'postsidebar' => __('文章页侧栏', 'haoui'),
             'pagesidebar' => __('页面侧栏', 'haoui'),
         );
-        foreach ($widgets as $key => $value) {  
+        foreach ($widgets as $key => $value) {
             register_sidebar(array(
                 'name'          => $value,
                 'id'            => 'widget_'.$key,
@@ -185,7 +185,7 @@ if( _hui('layout') !== 'ui-c2' ){
 }
 
 
-/* 
+/*
  * reg nav
  * ====================================================
 */
@@ -196,7 +196,7 @@ if (function_exists('register_nav_menus')){
 }
 
 
-/* 
+/*
  * nav
  * ====================================================
 */
@@ -205,7 +205,7 @@ function hui_nav_menu($class='nav', $location='nav'){
 }
 
 
-/* 
+/*
  * logo
  * ====================================================
 */
@@ -221,12 +221,12 @@ function hui_logo($class='logo', $tag=array('h1', 'div')){
     if( !empty($src) ){
         $src = '<img src="'.$src.'" alt="'. get_bloginfo('name') .'">';
     }
-    
+
     echo '<'.$tag.' class="logo"><a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name')._hui('connector').get_bloginfo('description').'">'. $src .get_bloginfo('name').'</a></'.$tag.'>';
 }
 
 
-/* 
+/*
  * from
  * ====================================================
 */
@@ -243,20 +243,20 @@ function hui_get_post_from($pid='', $prevtext='图片参考：'){
         }
         $from = (_hui('post_from_h1')?_hui('post_from_h1'):$prevtext).$from;
     }
-    return $from; 
+    return $from;
 }
 
 
-/* 
+/*
  * recent post number
  * ====================================================
 */
 function hui_get_recent_posts_number($days=1) {
     global $wpdb;
     $today = gmdate('Y-m-d H:i:s', time() + 3600 * 8);
-    $daysago = date( "Y-m-d H:i:s", strtotime($today) - ($days * 24 * 60 * 60) ); 
+    $daysago = date( "Y-m-d H:i:s", strtotime($today) - ($days * 24 * 60 * 60) );
     $post_ID = array();
-    $result = $wpdb->get_results("SELECT ID FROM $wpdb->posts WHERE post_date BETWEEN '$daysago' AND '$today' AND post_status='publish' AND post_type='post' ORDER BY post_date DESC ");         
+    $result = $wpdb->get_results("SELECT ID FROM $wpdb->posts WHERE post_date BETWEEN '$daysago' AND '$today' AND post_status='publish' AND post_type='post' ORDER BY post_date DESC ");
         foreach ($result as $Item) {
             $post_ID[] = $Item->ID;
         }
@@ -298,14 +298,14 @@ function hui_bodyclass(){
 }
 
 
-/* 
+/*
  * post like button
  * ====================================================
 */
 function hui_get_post_like($class='', $pid='', $text=''){
     $pls = _hui('post_plugin');
     if( !$pls || !$pls['like'] ) return false;
-    
+
     $pid = $pid ? $pid : get_the_ID();
     $text = $text ? $text : __('赞', 'haoui');
     $like = get_post_meta( $pid, 'like', true );
@@ -319,7 +319,7 @@ function hui_get_post_like($class='', $pid='', $text=''){
 }
 
 
-/* 
+/*
  * is user like ?
  * ====================================================
 */
@@ -332,11 +332,11 @@ function hui_is_my_like($pid=''){
 }
 
 
-/* 
+/*
  * remove head
  * ====================================================
 */
-remove_action( 'wp_head',   'wp_generator' ); 
+remove_action( 'wp_head',   'wp_generator' );
 
 add_filter('show_admin_bar','hide_admin_bar');
 function hide_admin_bar($flag) {
@@ -344,19 +344,19 @@ function hide_admin_bar($flag) {
 }
 
 
-/* 
+/*
  * editor style
  * ====================================================
 */
 add_editor_style('editor-style.css');
 
 
-/* 
+/*
  * post thumbnail
  * ====================================================
 */
 add_theme_support('post-thumbnails');
-// set_post_thumbnail_size(240, 180, false); 
+// set_post_thumbnail_size(240, 180, false);
 
 
 function hui_target_blank(){
@@ -366,7 +366,7 @@ function hui_target_blank(){
 
 
 
-/* 
+/*
  * paging
  * ====================================================
 */
@@ -377,17 +377,17 @@ function hui_paging() {
     if ( is_singular() ) return;
     global $wp_query, $paged;
     $max_page = $wp_query->max_num_pages;
-    if ( $max_page == 1 ) return; 
+    if ( $max_page == 1 ) return;
     echo '<div class="pagination'.(_hui('paging_type') == 'multi'?' pagination-multi':'').'"><ul>';
     if ( empty( $paged ) ) $paged = 1;
     if( _hui('paging_type') == 'multi' && $paged !== 1 ) p_link(0);
-    // echo '<span class="pages">Page: ' . $paged . ' of ' . $max_page . ' </span> '; 
+    // echo '<span class="pages">Page: ' . $paged . ' of ' . $max_page . ' </span> ';
     echo '<li class="prev-page">'; previous_posts_link(__('上一页', 'haoui')); echo '</li>';
 
     if( _hui('paging_type') == 'multi' ){
         if ( $paged > $p + 1 ) p_link( 1, '<li>'.__('第一页', 'haoui').'</li>' );
         if ( $paged > $p + 2 ) echo "<li><span>···</span></li>";
-        for( $i = $paged - $p; $i <= $paged + $p; $i++ ) { 
+        for( $i = $paged - $p; $i <= $paged + $p; $i++ ) {
             if ( $i > 0 && $i <= $max_page ) $i == $paged ? print "<li class=\"active\"><span>{$i}</span></li>" : p_link( $i );
         }
         if ( $paged < $max_page - $p - 1 ) echo "<li><span> ... </span></li>";
@@ -413,12 +413,12 @@ function p_link( $i, $title = '', $w='' ) {
 endif;
 
 
-/* 
+/*
  * custom code
  * ====================================================
 */
 add_action('wp_head', 'hui_wp_head');
-function hui_wp_head() { 
+function hui_wp_head() {
     hui_head_css();
     if( _hui('site_keywords_description_s') ){
         hui_keywords();
@@ -429,7 +429,7 @@ function hui_wp_head() {
 }
 
 add_action('wp_footer', 'hui_wp_footer');
-function hui_wp_footer() { 
+function hui_wp_footer() {
     if( _hui('footcode') ) echo "<!--ADD_CODE_FOOTER_START-->\n"._hui('footcode')."\n<!--ADD_CODE_FOOTER_END-->\n";
 }
 
@@ -490,7 +490,7 @@ function hui_get_share(){
 }
 
 
-/* 
+/*
  * post views
  * ====================================================
 */
@@ -518,7 +518,7 @@ function hui_get_views($class='post-views', $before='', $after=''){
 }
 
 
-/* 
+/*
  * string limit
  * ====================================================
 */
@@ -539,7 +539,7 @@ function random_str($length){
 }
 
 
-/* 
+/*
  * 404
  * ====================================================
 */
@@ -548,7 +548,7 @@ function hui_404(){
 }
 
 
-/* 
+/*
  * post excerpt
  * ====================================================
 */
@@ -574,9 +574,9 @@ add_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
 
 function hui_post_images_number(){
     global $post;
-    $content = $post->post_content;  
-    preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);  
-    return count($strResult[1]);  
+    $content = $post->post_content;
+    preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+    return count($strResult[1]);
 }
 function hui_get_comment_number($before='',$after=''){
     if( !$before ) $before = __('评论', 'haoui').'(';
@@ -602,28 +602,28 @@ function hui_get_adcode($name){
 
 
 
-/* 
+/*
  * post related
  * ====================================================
 */
 function hui_posts_related($title='', $limit=8, $model='thumb'){
     global $post;
 
-    $exclude_id = $post->ID; 
-    $posttags = get_the_tags(); 
+    $exclude_id = $post->ID;
+    $posttags = get_the_tags();
     $i = 0;
     echo '<div class="relates'.' relates-model-'.$model.'"><h3 class="title"><strong>'.$title.'</strong></h3><ul>';
-    if ( $posttags ) { 
+    if ( $posttags ) {
         $tags = ''; foreach ( $posttags as $tag ) $tags .= $tag->name . ',';
         $args = array(
             'post_status' => 'publish',
-            'tag_slug__in' => explode(',', $tags), 
-            'post__not_in' => explode(',', $exclude_id), 
-            'ignore_sticky_posts' => 1, 
-            'orderby' => 'comment_date', 
+            'tag_slug__in' => explode(',', $tags),
+            'post__not_in' => explode(',', $exclude_id),
+            'ignore_sticky_posts' => 1,
+            'orderby' => 'comment_date',
             'posts_per_page' => $limit
         );
-        query_posts($args); 
+        query_posts($args);
         while( have_posts() ) { the_post();
             echo '<li><a'.hui_target_blank().' href="'.get_permalink().'">';
 
@@ -637,10 +637,10 @@ function hui_posts_related($title='', $limit=8, $model='thumb'){
         };
         wp_reset_query();
     }
-    if ( $i < $limit ) { 
+    if ( $i < $limit ) {
         $cats = ''; foreach ( get_the_category() as $cat ) $cats .= $cat->cat_ID . ',';
         $args = array(
-            'category__in' => explode(',', $cats), 
+            'category__in' => explode(',', $cats),
             'post__not_in' => explode(',', $exclude_id),
             'ignore_sticky_posts' => 1,
             'orderby' => 'comment_date',
@@ -663,27 +663,27 @@ function hui_posts_related($title='', $limit=8, $model='thumb'){
     if ( $i == 0 ){
         echo '暂无内容！';
     }
-    
+
     echo '</ul></div>';
 }
 
 
-/* 
+/*
  * post thumbnail
  * ====================================================
 */
-function hui_get_thumbnail( $single=true, $must=true ) {  
+function hui_get_thumbnail( $single=true, $must=true ) {
     global $post;
     $html = '';
-    if ( has_post_thumbnail() ) {   
+    if ( has_post_thumbnail() ) {
 
         /*$domsxe = simplexml_load_string(get_the_post_thumbnail());
-        $src = $domsxe->attributes()->src;  
+        $src = $domsxe->attributes()->src;
         $src_array = wp_get_attachment_image_src(hui_get_attachment_id_from_src($src), 'thumbnail');
         $html = sprintf('<span><img data-original="%s" class="thumb"/></span>', $src_array[0]);*/
-        
+
         $domsxe = get_the_post_thumbnail();
-        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $domsxe, $strResult, PREG_PATTERN_ORDER);  
+        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $domsxe, $strResult, PREG_PATTERN_ORDER);
         $images = $strResult[1];
         foreach($images as $src){
             $html = sprintf('<span><img data-original="%s" class="thumb"/></span>', $src);
@@ -691,8 +691,8 @@ function hui_get_thumbnail( $single=true, $must=true ) {
         }
 
     } else {
-        $content = $post->post_content;  
-        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);  
+        $content = $post->post_content;
+        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
         $images = $strResult[1];
 
         $counter = count($strResult[1]);
@@ -702,7 +702,7 @@ function hui_get_thumbnail( $single=true, $must=true ) {
         }
 
         $etype = _hui('list_type');
-        
+
         $i = 0;
         foreach($images as $src){
             $i++;
@@ -720,28 +720,28 @@ function hui_get_thumbnail( $single=true, $must=true ) {
                 $filetype = hui_get_filetype($src);
                 $src = rtrim($src, '.'.$filetype)._hui('list_thumb_out_text').'.'.$filetype;
             }
-            
+
             $item = sprintf('<img data-original="%s" class="thumb"/>', $src);
             if( $single){
                 return $item;
-                break; 
+                break;
             }
             $html .= '<span class="item"><span class="thumb-span">'.$item.'</span></span>';
-            if( 
-                /*( $etype == 'more' && $counter >= 12 && $i >= 12 ) || 
-                ( $etype == 'multi' && ($counter >= 8 && $i >= 8) || ($counter >= 4 && $i >= 4) || ($counter > 0 && $counter < 4 && $i >= 1) ) || 
-                ( $etype == 'four' && $counter >= 4 && $i >= 4 ) || 
+            if(
+                /*( $etype == 'more' && $counter >= 12 && $i >= 12 ) ||
+                ( $etype == 'multi' && ($counter >= 8 && $i >= 8) || ($counter >= 4 && $i >= 4) || ($counter > 0 && $counter < 4 && $i >= 1) ) ||
+                ( $etype == 'four' && $counter >= 4 && $i >= 4 ) ||
                 ( $etype == 'thumb' && $counter >= 1 && $i >= 1 )*/
 
-                ($etype == 'more' && $counter >= 12 && $i >= 12) || 
-                ($etype == 'multi' && $counter >= 8 && $i >= 8) || 
-                ($etype == 'four' && $counter >= 4 && $i >= 4) || 
-                ($counter >= 12 && $i >= 12) || 
-                ($counter >= 8 && $counter < 12 && $i >= 8) || 
-                ($counter >= 4 && $counter < 8 && $i >= 4) || 
-                ($counter > 0 && $counter < 4 && $i >= 1) 
+                ($etype == 'more' && $counter >= 12 && $i >= 12) ||
+                ($etype == 'multi' && $counter >= 8 && $i >= 8) ||
+                ($etype == 'four' && $counter >= 4 && $i >= 4) ||
+                ($counter >= 12 && $i >= 12) ||
+                ($counter >= 8 && $counter < 12 && $i >= 8) ||
+                ($counter >= 4 && $counter < 8 && $i >= 4) ||
+                ($counter > 0 && $counter < 4 && $i >= 1)
             ){
-                break; 
+                break;
             }
         }
     }
@@ -756,11 +756,11 @@ function hui_get_attachment_id_from_src ($link) {
 
 
 
-/* 
+/*
  * avatar cache
  * ====================================================
 */
-// add_filter('get_avatar','hui_avatar'); 
+// add_filter('get_avatar','hui_avatar');
 function hui_avatar($avatar) {
     $tmp = strpos($avatar, 'http');
     $g = substr($avatar, $tmp, strpos($avatar, "'", $tmp) - $tmp);
@@ -768,18 +768,18 @@ function hui_avatar($avatar) {
     $f = substr($g, $tmp, strpos($g, "?", $tmp) - $tmp);
     $w = get_bloginfo('wpurl');
     $e = ABSPATH .'avatar/'. $f .'.png';
-    $t = 15*24*60*60; 
-    if ( !is_file($e) || (time() - filemtime($e)) > $t ) 
+    $t = 15*24*60*60;
+    if ( !is_file($e) || (time() - filemtime($e)) > $t )
         copy(htmlspecialchars_decode($g), $e);
-    else  
+    else
         $avatar = strtr($avatar, array($g => $w.'/avatar/'.$f.'.png'));
-    if ( filesize($e) < 500 ) 
+    if ( filesize($e) < 500 )
         copy(AVATAR_DEFAULT, $e);
     return $avatar;
 }
 
 
-/* 
+/*
  * avatar
  * ====================================================
 */
@@ -800,7 +800,7 @@ function hui_get_avatar( $user_id='', $user_email='', $src=false, $size=50 ){
 }
 
 
-/* 
+/*
  * keywords
  * ====================================================
 */
@@ -818,7 +818,7 @@ function hui_keywords() {
     }else{
         $keywords = substr_replace( $keywords , '' , -2);
     }
-    
+
   } elseif ( is_home () )    { $keywords = _hui('keywords');
   } elseif ( is_tag() )      { $keywords = single_tag_title('', false);
   } elseif ( is_category() ) { $keywords = single_cat_title('', false);
@@ -842,7 +842,7 @@ function hui_keywords() {
 }
 
 
-/* 
+/*
  * description
  * ====================================================
 */
@@ -864,7 +864,7 @@ function hui_description() {
     }
   } elseif ( is_home () )    { $description = _hui('description');
   } elseif ( is_tag() )      { $description = $blog_name . "'" . single_tag_title('', false) . "'";
-  } elseif ( is_category() ) { 
+  } elseif ( is_category() ) {
 
     $description = trim(strip_tags(category_description()));
 
@@ -882,17 +882,17 @@ function hui_description() {
 }
 
 
-/* 
+/*
  * smiliea src
  * ====================================================
 */
-add_filter('smilies_src','hui_smilies_src',1,10); 
+add_filter('smilies_src','hui_smilies_src',1,10);
 function hui_smilies_src ($img_src, $img, $siteurl){
     return THEME_URI.'/images/smilies/'.$img;
 }
 
 
-/* 
+/*
  * noself ping
  * ====================================================
 */
@@ -905,7 +905,7 @@ function hui_noself_ping( &$links ) {
 }
 
 
-/* 
+/*
  * mail from & name
  * ====================================================
 */
@@ -922,14 +922,14 @@ function hui_res_from_name($email){
 }
 
 
-/* 
+/*
  * comment notify
  * ====================================================
 */
-add_action('comment_post','comment_mail_notify'); 
+add_action('comment_post','comment_mail_notify');
 function comment_mail_notify($comment_id) {
-  $admin_notify = '1'; 
-  $admin_email = get_bloginfo ('admin_email'); 
+  $admin_notify = '1';
+  $admin_email = get_bloginfo ('admin_email');
   $comment = get_comment($comment_id);
   $comment_author_email = trim($comment->comment_author_email);
   $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
@@ -941,7 +941,7 @@ function comment_mail_notify($comment_id) {
   $notify = $parent_id ? get_comment($parent_id)->comment_mail_notify : '0';
   $spam_confirmed = $comment->comment_approved;
   if ($parent_id != '' && $spam_confirmed != 'spam' && $notify == '1') {
-    $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])); 
+    $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
     $to = trim(get_comment($parent_id)->comment_author_email);
     $subject = 'Hi，您在 [' . get_option("blogname") . '] 的留言有人回复啦！';
     $message = '
@@ -962,7 +962,7 @@ function comment_mail_notify($comment_id) {
 }
 
 
-/* 
+/*
  * comment mail notify checked
  * ====================================================
 */
@@ -972,15 +972,15 @@ function hui_add_checkbox() {
 }
 
 
-/* 
+/*
  * post copyright
  * ====================================================
 */
 if( _hui('post_copyright_s') ){
     // add_filter('the_content','hui_copyright');
-}    
+}
 function hui_copyright($content) {
-    // $content .= '<p>'.(_hui('post_from_s')?hui_get_post_from():'').'</p>'; 
+    // $content .= '<p>'.(_hui('post_from_s')?hui_get_post_from():'').'</p>';
     if( !is_page() ){
         $content.= '<p class="post-copyright">'._hui('post_copyright').'：<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> &raquo; <a href="'.get_permalink().'">'.get_the_title().get_the_subtitle().'</a></p>';
     }
@@ -988,7 +988,7 @@ function hui_copyright($content) {
 }
 
 
-/* 
+/*
  * timeago
  * ====================================================
 */
@@ -1015,7 +1015,7 @@ function timeago( $ptime ) {
 }
 
 
-/* 
+/*
  * admin comment Ctrl+Enter
  * ====================================================
 */
@@ -1033,7 +1033,7 @@ function hui_admin_comment_ctrlenter(){
 };
 
 
-/* 
+/*
  * oauth
  * ====================================================
 */
@@ -1064,8 +1064,8 @@ function hui_user_avatar($user_id=''){
 }
 
 
-/* 
- * comment list 
+/*
+ * comment list
  * ====================================================
 */
 function hui_comment_list($comment, $args, $depth) {
@@ -1078,14 +1078,14 @@ function hui_comment_list($comment, $args, $depth) {
     if ($comment->comment_approved == '0'){
       echo '<span class="c-approved">'.__('待审核', 'haoui').'</span>';
     }
-    echo '<time class="c-time">'.timeago($comment->comment_date).'</time>'; 
+    echo '<time class="c-time">'.timeago($comment->comment_date).'</time>';
     if ($comment->comment_approved !== '0')
-        echo comment_reply_link( array_merge( $args, array('add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); 
+        echo comment_reply_link( array_merge( $args, array('add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
   echo '</div>';
 }
 
 
-/* 
+/*
  * import javascript & css
  * ====================================================
 */
@@ -1094,7 +1094,7 @@ function hui_load_scripts() {
     if (!is_admin()) {
         wp_enqueue_style( 'main', get_stylesheet_directory_uri().'/style.css', array(), THEME_VERSION, 'all' );
         wp_deregister_script( 'jquery' );
-        wp_deregister_script( 'l10n' ); 
+        wp_deregister_script( 'l10n' );
 
         $jss = array(
             'no' => array(
@@ -1121,14 +1121,14 @@ function hui_load_scripts() {
         if( !$paged && _hui('focusslide_s') && _hui('focusslide_s_m') ){
             wp_enqueue_script( '_hammer', THEME_URI . '/js/hammer.min.js', array(), THEME_VERSION, true );
         }
-        
+
         wp_enqueue_script( '_custom', THEME_URI . '/js/custom.js', array(), THEME_VERSION, true );
 
     }
 }
 
 
-/* 
+/*
  * import style
  * ====================================================
 */
@@ -1137,7 +1137,7 @@ function hui_head_css() {
     $styles = '';
 
     $site_width = _hui('site_width');
-    if( $site_width && $site_width !== '1280' ){
+    if( $site_width && $site_width !== '1380' ){
         $styles .= ".container{max-width:{$site_width}px}";
     }
 
@@ -1152,7 +1152,7 @@ function hui_head_css() {
         $skin_option = _hui('theme_skin');
         $skc = '#'.$skin_option;
     }
-    
+
     if( $skin_option && $skin_option !== 'FF5E52' ){
         $styles .= "a:hover, a:focus,.post-like.actived,.excerpt h2 a:hover,.user-welcome strong,.article-title a:hover,#comments b,.text-muted a:hover,.relates a:hover,.archives .item:hover h3,.linkcat h2,.sticky a:hover,.article-content a:hover,.nav li.current-menu-item > a, .nav li.current-menu-parent > a, .nav li.current_page_item > a, .nav li.current-posa,.article-meta a:hover,.excerpt h2 a span,.article-title a span,.most-comment-posts li > a span,.widget_postlist .items-01 .text span{color:{$skc};}.logo a,.article-tags a,.search-form .btn,#bdcs .bdcs-search-form-submit,.widget_tags_inner a:hover:hover,.focusmo a:hover h4,.tagslist .tagname:hover,.pagination ul > li.next-page > a{background-color:{$skc};}.label-important,.badge-important{background-color:{$skc};}.label-important .label-arrow,.badge-important .label-arrow{border-left-color:{$skc};}.title strong{border-bottom-color:{$skc};}#submit{background: {$skc};border-right: 2px solid {$skc};border-bottom: 2px solid {$skc};}@media (max-width:720px){.ui-navtop .logo, .logo{background-color:{$skc};}.nav li.current-menu-item > a, .nav li.current-menu-parent > a, .nav li.current_page_item > a, .nav li.current-post-ancestor > a{border-bottom-color:$skc;}}";
     }

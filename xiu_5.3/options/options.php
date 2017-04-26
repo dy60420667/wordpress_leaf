@@ -43,13 +43,13 @@ function opshui_options() {
 		'face' => 'yahei',
 		'style' => 'normal',
 		'color' => '#383121' );
-		
+
 	$typography_content = array(
 		'size' => '13px',
 		'face' => 'yahei',
 		'style' => 'normal',
 		'color' => '#000000' );
-		
+
 	// Typography Options
 	$typography_options = array(
 		'sizes' => false
@@ -69,7 +69,7 @@ function opshui_options() {
 	foreach ($options_pages_obj as $page) {
 		$options_pages[$page->ID] = $page->post_title;
 	}
-	
+
 
 	$options_linkcats = array();
 	$options_linkcats_obj = get_terms('link_category');
@@ -90,11 +90,11 @@ function opshui_options() {
 
 
 
-	/* 
+	/*
 	 * BASIC
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('基本', 'haoui'),
 		'type' => 'heading');
@@ -175,9 +175,9 @@ function opshui_options() {
 	$options[] = array(
 		'name' => __('网页最大宽度', 'haoui'),
 		'id' => 'site_width',
-		'std' => 1280,
+		'std' => 1380,
 		'class' => 'mini',
-		'desc' => __('默认：1280，单位：px（像素）', 'haoui'),
+		'desc' => __('默认：1380，单位：px（像素）', 'haoui'),
 		'type' => 'text');
 
 	$options[] = array(
@@ -282,20 +282,20 @@ function opshui_options() {
 		'desc' => __('选择一个底部友情链接的链接分类', 'haoui'),
 		'type' => 'select');
 
-	
 
 
 
 
-	/* 
+
+	/*
 	 * SEO
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('SEO', 'haoui'),
 		'type' => 'heading');
-	
+
 	$options[] = array(
 		'name' => __('首页关键字(keywords)', 'haoui'),
 		'id' => 'keywords',
@@ -355,11 +355,11 @@ function opshui_options() {
 
 
 
-	/* 
+	/*
 	 * LIST
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('列表', 'haoui'),
 		'type' => 'heading');
@@ -465,11 +465,11 @@ function opshui_options() {
 
 
 
-	/* 
+	/*
 	 * SIDEBAR
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('侧栏', 'haoui'),
 		'type' => 'heading');
@@ -533,7 +533,7 @@ function opshui_options() {
 
 
 
-	/* 
+	/*
 	 * HOME
 	 * ====================================================================================================
 	 */
@@ -689,8 +689,8 @@ function opshui_options() {
 		'std' => '1 2 3 4 5',
 		'type' => 'text');
 
-	for ($i=1; $i <= 5; $i++) { 
-		
+	for ($i=1; $i <= 5; $i++) {
+
 	$options[] = array(
 		'name' => __('轮换图', 'haoui').$rrr.__('图', 'haoui').$i,
 		'id' => 'focusslide_title_'.$i,
@@ -709,7 +709,7 @@ function opshui_options() {
 		'std' => true,
 		'desc' => __('新窗口打开', 'haoui'),
 		'type' => 'checkbox');
-	
+
 	$options[] = array(
 		'id' => 'focusslide_src_'.$i,
 		'desc' => __('图片，尺寸：', 'haoui').'860*320',
@@ -721,23 +721,23 @@ function opshui_options() {
 
 
 
-	
 
 
 
 
 
-	/* 
+
+	/*
 	 * POST
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('文章页', 'haoui'),
 		'type' => 'heading');
 
 
-	
+
 	$options[] = array(
 		'name' => __('面包屑导航', 'haoui').'(ver5.2+)',
 		'id' => 'breadcrumbs_single_s',
@@ -841,7 +841,7 @@ with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createEle
 		'type' => "checkbox",
 		'std' => true,
 		'desc' => __('开启', 'haoui'));
-	
+
 	$options[] = array(
 		'name' => __('文章来源', 'haoui').$rrr.__('显示字样', 'haoui'),
 		'id' => 'post_from_h1',
@@ -870,7 +870,7 @@ with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createEle
 		'std' => __('未经允许不得转载', 'haoui'),
 		'type' => 'text');
 
-	
+
 
 	$options[] = array(
 		'name' => __('文章评论', 'haoui').$rrr.__('标题', 'haoui'),
@@ -896,11 +896,11 @@ with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createEle
 
 
 
-	/* 
+	/*
 	 * PAGE
 	 * ====================================================================================================
 	 */
-	
+
 
 	$options[] = array(
 		'name' => __('页面', 'haoui'),
@@ -928,16 +928,16 @@ with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createEle
 		'desc' => __('这是个控制页面模板“Page Has Menu”左侧菜单的选项，如果你还没有页面使用“Page Has Menu”页面模板，请先新建一个页面并选择该页面模版。', 'haoui'),
 		'type' => 'multicheck');
 
-	
 
 
 
 
-	/* 
+
+	/*
 	 * LINK
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('直达链接', 'haoui'),
 		'type' => 'heading');
@@ -981,11 +981,11 @@ with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createEle
 
 
 
-	/* 
+	/*
 	 * ACCOUNT
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('社交', 'haoui'),
 		'type' => 'heading' );
@@ -1035,11 +1035,11 @@ with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createEle
 
 
 
-	/* 
+	/*
 	 * ADS
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('广告位', 'haoui'),
 		'type' => 'heading' );
@@ -1200,11 +1200,11 @@ with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createEle
 
 
 
-	/* 
+	/*
 	 * CODE
 	 * ====================================================================================================
 	 */
-	
+
 	$options[] = array(
 		'name' => __('自定义代码', 'haoui'),
 		'type' => 'heading' );
@@ -1236,7 +1236,7 @@ with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createEle
 		'id' => 'trackcode',
 		'std' => '',
 		'type' => 'textarea');
-		
+
 	return $options;
 }
 
@@ -1260,21 +1260,21 @@ jQuery(document).ready(function($) {
 	if ($('#example_showhidden:checked').val() !== undefined) {
 		$('#section-example_text_hidden').show();
 	}
-	
+
 	$('#show_top_teaser').click(function() {
   		$('#section-top_teaser').fadeToggle(400);
 	});
 	if ($('#show_top_teaser:checked').val() !== undefined) {
 		$('#section-top_teaser').show();
 	}
-	
+
 	$('#show_megamenu').click(function() {
   		$('#section-megamenu, #section-megamenu_title').fadeToggle(400);
 	});
 	if ($('#show_megamenu:checked').val() !== undefined) {
 		$('#section-megamenu, #section-megamenu_title').show();
 	}
-	
+
 	$('#autoplay').click(function() {
   		$('#section-autoplay_timer').fadeToggle(400);
 	});
@@ -1291,12 +1291,12 @@ jQuery(document).ready(function($) {
 		else {
 			$('#section-custom_heading_font, #section-custom_heading_font_url').hide(400);
 		}
-		
+
 	});
 	if ($('#heading_typography_face').val() == 'custom') {
 		$('#section-custom_heading_font, #section-custom_heading_font_url').show();
 	}
-	
+
 	$("#content_typography_face").change(function(){
 		// console.log($(this).val());
 		if ($(this).val() === 'custom') {
@@ -1306,7 +1306,7 @@ jQuery(document).ready(function($) {
 		else {
 			$('#section-custom_content_font, #section-custom_content_font_url').hide(400);
 		}
-		
+
 	});
 	if ($('#content_typography_face').val() == 'custom') {
 		$('#section-custom_content_font, #section-custom_content_font_url').show();

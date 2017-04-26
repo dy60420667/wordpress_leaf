@@ -5,7 +5,7 @@
 <footer class="footer">
 	<?php if( _hui('flinks_s') && _hui('flinks_cat') && ((_hui('flinks_home_s')&&is_home()) || (!_hui('flinks_home_s'))) ){ ?>
 		<div class="flinks">
-			<?php 
+			<?php
 				wp_list_bookmarks(array(
 					'category'         => _hui('flinks_cat'),
 					'show_description' => false,
@@ -20,12 +20,38 @@
 	<?php } ?>
     &copy; <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> &nbsp; <?php echo __('本站主题由', 'haoui') ?> <a href="http://themebetter.com" target="_blank"><?php echo __('themebetter', 'haoui') ?></a> <?php echo __('提供', 'haoui') ?> &nbsp; <?php echo _hui('footer_seo') ?>
     <?php echo _hui('trackcode') ?>
+
+	<div class="top25">
+		<span id="span_dt_dt"></span>
+	</div>
+
+	<script>
+	    function show_date_time() {
+	        window.setTimeout("show_date_time()", 1000);
+	        BirthDay = new Date("3/30/2017 00:00:01");
+	        today = new Date();
+	        timeold = (today.getTime() - BirthDay.getTime());
+	        sectimeold = timeold / 1000
+	        secondsold = Math.floor(sectimeold);
+	        msPerDay = 24 * 60 * 60 * 1000
+	        e_daysold = timeold / msPerDay
+	        daysold = Math.floor(e_daysold);
+	        e_hrsold = (e_daysold - daysold) * 24;
+	        hrsold = Math.floor(e_hrsold);
+	        e_minsold = (e_hrsold - hrsold) * 60;
+	        minsold = Math.floor((e_hrsold - hrsold) * 60);
+	        seconds = Math.floor((e_minsold - minsold) * 60);
+	        span_dt_dt.innerHTML = "跑趣吧已运行： " + daysold + " 天 " + hrsold + " 小时 " + minsold + " 分 " + seconds + " 秒 " +" 未来的日子我陪你一起走过";
+	    }
+	    show_date_time();
+	</script>
+
 </footer>
 <?php if( _hui('layout') !== 'ui-navtop' ){ ?>
 </section>
 <?php } ?>
 
-<?php  
+<?php
 $roll = '';
 if( is_home() && _hui('sideroll_index_s') ){
 	$roll = _hui('sideroll_index');
