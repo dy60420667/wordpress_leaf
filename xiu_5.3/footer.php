@@ -21,8 +21,9 @@
     &copy; <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> &nbsp; <?php echo __('本站主题由', 'haoui') ?> <a href="http://themebetter.com" target="_blank"><?php echo __('themebetter', 'haoui') ?></a> <?php echo __('提供', 'haoui') ?> &nbsp; <?php echo _hui('footer_seo') ?>
     <?php echo _hui('trackcode') ?>
 
+
 	<div class="top25">
-		<span id="span_dt_dt"></span>
+		<?php $blog_title = get_bloginfo('name'); echo $blog_title?><span id="span_dt_dt"></span>
 	</div>
 
 	<script>
@@ -41,7 +42,7 @@
 	        e_minsold = (e_hrsold - hrsold) * 60;
 	        minsold = Math.floor((e_hrsold - hrsold) * 60);
 	        seconds = Math.floor((e_minsold - minsold) * 60);
-	        span_dt_dt.innerHTML = "跑趣吧已运行： " + daysold + " 天 " + hrsold + " 小时 " + minsold + " 分 " + seconds + " 秒 " +" 未来的日子我陪你一起走过";
+	        span_dt_dt.innerHTML = "已运行： " + daysold + "天 " + hrsold + "小时 " + minsold + "分 " + seconds + "秒 " +" 未来的日子我陪你一起走过";
 	    }
 	    show_date_time();
 	</script>
