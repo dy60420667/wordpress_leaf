@@ -29,7 +29,7 @@ get_header(); ?>
 			<div id="slideshow">
 				<ul class="rslides" id="slider-cat">
 					<!-- 幻灯调用指定文章，修改下面"include=1,2,3"中的数字为文章ID -->
-					<?php $posts = get_posts("include=1145,2,3"); if($posts) : foreach( $posts as $post ) : setup_postdata( $post );$do_not_duplicate[] = $post->ID; ?>
+					<?php $posts = get_posts("include=1,2,3"); if($posts) : foreach( $posts as $post ) : setup_postdata( $post );$do_not_duplicate[] = $post->ID; ?>
 					<?php $image = get_post_meta($post->ID, 'cat_img', true); ?>
 						<li>
 							<a href="<?php the_permalink() ?>" rel="bookmark"><img src="<?php echo $image; ?>" alt="<?php the_title(); ?>" /></a>
@@ -39,6 +39,9 @@ get_header(); ?>
 					<?php wp_reset_query(); ?>
 				</ul>
 			</div>
+
+
+
 			<!-- 最新文章调用篇数，修改下面"posts_per_page' =>"后面的数字 -->
 			<?php query_posts( array( "category__in" => array(get_query_var("cat")), 'posts_per_page' => 4, 'ignore_sticky_posts' => 1) ); ?>
 			<?php while ( have_posts() ) : the_post();$do_not_duplicate[] = $post->ID; ?>
@@ -46,7 +49,37 @@ get_header(); ?>
 			<?php endwhile; ?>
 			<div class="clear"></div>
 
+
 			<?php get_template_part('ad/ads', 'cms'); ?>
+
+
+			<?php $display_categories =  array(36,9); foreach ($display_categories as $category) { ?>
+			<?php query_posts( array( 'showposts' => 2, 'cat' => $category, 'post__not_in' => $do_not_duplicate ) ); ?>
+				<div class="cat-box wow fadeInUp" data-wow-delay="0.3s">
+					<h3 class="cat-title"><a href="<?php echo get_category_link($category);?>" title="<?php echo strip_tags(category_description($category)); ?>"><i class="fa fa-bars"></i><?php single_cat_title(); ?><i class="fa fa-angle-right"></i></a></h3>
+					<div class="clear"></div>
+					<div class="cat-site">
+						<div class="line-one-img one-img-5">
+							<?php while ( have_posts() ) : the_post(); ?>
+								<figure class="line-one-thumbnail">
+									<?php if (zm_get_option('lazy_s')) { zm_thumbnail_h(); } else { zm_thumbnail(); } ?>
+								</figure>
+							<?php endwhile; ?>
+							<div class="clear"></div>
+						</div>
+						<ul class="cat-one-list">
+							<?php query_posts( array( 'showposts' => 5, 'cat' => $category, 'offset' => 0, 'post__not_in' => $do_not_duplicate ) ); ?>
+							<?php while ( have_posts() ) : the_post(); ?>
+								<?php if (zm_get_option('list_date')) { ?><li class="list-date"><?php the_time('m/d'); ?></li><?php } ?>
+								<?php the_title( sprintf( '<li class="list-cat-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></li>' ); ?>
+							<?php endwhile; ?>
+							<?php wp_reset_query(); ?>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+			<?php } ?>
+
 
 			<div class="line-small">
 
@@ -78,7 +111,7 @@ get_header(); ?>
 
 							<ul class="cat-list">
 								<!-- 分类文章列表篇数，修改下面"'showposts' => 8"中的数字 -->
-								<?php query_posts( array( 'showposts' => 16, 'cat' => $category, 'offset' => 1, 'post__not_in' => $do_not_duplicate ) ); ?>
+								<?php query_posts( array( 'showposts' => 8, 'cat' => $category, 'offset' => 1, 'post__not_in' => $do_not_duplicate ) ); ?>
 
 								<?php while ( have_posts() ) : the_post(); ?>
 									<?php if (zm_get_option('list_date')) { ?><li class="list-date"><?php the_time('m/d') ?></li><?php } ?>
