@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: DW Question Answer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-17 16:32+0700\n"
-"PO-Revision-Date: 2016-08-17 16:32+0700\n"
+"PO-Revision-Date: 2017-04-24 16:31+0800\n"
 "Last-Translator: DesignWall <webmaster@designwall.com>\n"
 "Language-Team: DesignWall <webmaster@designwall.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: dw-question-answer.php:147
 msgid "DWQA Questions"
-msgstr "问答中心"
+msgstr "论坛"
 
 #: dw-question-answer.php:164
 msgid "DWQA Ask Question"
@@ -463,12 +463,12 @@ msgstr "发表人：%s"
 #: inc/Posts/Base.php:251 inc/Posts/Base.php:255
 #, php-format
 msgid "%s answered <span class=\"dwqa-date\">%s</span> ago"
-msgstr ""
+msgstr "<span class=\"dwqa-date\">%s</span> 之前 %s 回答"
 
 #: inc/Posts/Base.php:257
 #, php-format
 msgid "%s asked <span class=\"dwqa-date\">%s</span> ago"
-msgstr ""
+msgstr " <span class=\"dwqa-date\">%s</span> 之前 %s 提问"
 
 #: inc/Posts/Base.php:306
 msgid "DWQA Posts"
@@ -518,7 +518,7 @@ msgstr "提问人"
 #: inc/Posts/Question.php:266 inc/Settings.php:395
 #: templates/archive-question-filter.php:28
 msgid "Questions"
-msgstr ""
+msgstr "问题"
 
 #: inc/Posts/Question.php:101
 msgid "Question"
@@ -1087,7 +1087,7 @@ msgstr ""
 
 #: inc/Template.php:78
 msgid "What do you want to know?"
-msgstr ""
+msgstr "你的问题？"
 
 #: inc/Template.php:157
 msgid "Subscribe"
@@ -1221,7 +1221,7 @@ msgstr "私人问题"
 
 #: inc/widgets/Latest_Question.php:44
 msgid "ago"
-msgstr ""
+msgstr "前"
 
 #: inc/widgets/Latest_Question.php:79
 msgid "Show question date"
@@ -1303,7 +1303,7 @@ msgstr ""
 
 #: templates/archive-question-filter.php:14
 msgid "Filter:"
-msgstr ""
+msgstr "状态:"
 
 #: templates/archive-question-filter.php:16
 msgid "All"
@@ -1311,15 +1311,15 @@ msgstr "所有"
 
 #: templates/archive-question-filter.php:22
 msgid "Unanswered"
-msgstr ""
+msgstr "未回复"
 
 #: templates/archive-question-filter.php:24
 msgid "My questions"
-msgstr ""
+msgstr "我的问题"
 
 #: templates/archive-question-filter.php:25
 msgid "My subscribes"
-msgstr ""
+msgstr "我的记录"
 
 #: templates/archive-question-filter.php:29
 msgid "Subscribes"
@@ -1349,7 +1349,7 @@ msgstr ""
 #, php-format
 msgctxt "%s = human-readable time difference"
 msgid "replied %s ago"
-msgstr ""
+msgstr "%s 前回复"
 
 #: templates/content-edit.php:21 templates/question-submit-form.php:13
 msgid "Title"
@@ -1378,7 +1378,7 @@ msgstr "提问于"
 #: templates/content-question.php:25
 #, php-format
 msgid "<span><a href=\"%s\">%s%s</a> %s %s ago</span>"
-msgstr ""
+msgstr "<span><a href=\"%s\">%s%s</a> %s %s 前</span>"
 
 #: templates/content-question.php:26 templates/content-single-answer.php:25
 msgid "&nbsp;&bull;&nbsp;"
@@ -1417,7 +1417,7 @@ msgstr ""
 #: templates/content-single-answer.php:23
 #, php-format
 msgid "<span><a href=\"%s\">%s%s</a> %s answered %s ago</span>"
-msgstr ""
+msgstr "<span><a href=\"%s\">%s%s</a>%s 之前 %s 回答 </span>"
 
 #: templates/content-single-answer.php:26
 msgid "Private"
@@ -1426,7 +1426,7 @@ msgstr "私人的"
 #: templates/content-single-question.php:19
 #, php-format
 msgid "<span><a href=\"%s\">%s%s</a> %s asked %s ago</span>"
-msgstr ""
+msgstr "<span><a href=\"%s\">%s%s</a>%s 之前 %s 提问 </span>"
 
 #: templates/content-single-question.php:25
 msgid "Question Tags: "

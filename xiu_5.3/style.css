@@ -1961,6 +1961,12 @@ body .bd_weixin_popup .bd_weixin_popup_foot{display: none;}
 	.ui-navtop .focus .thumbnail .thumb{height: 54px}
 }
 
+.home_navigate-content{
+	margin-left: 190px;
+	padding: 20px 25px 0;
+	min-height: 800px;
+	overflow: hidden;
+}
 
 
 .home_navigate .home_navigate-content section {
@@ -2021,6 +2027,7 @@ body .bd_weixin_popup .bd_weixin_popup_foot{display: none;}
     margin-bottom: 0;
     float: left;
 }
+
 
 
 .home_navigate .home_navigate-content section li {

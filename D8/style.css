@@ -1741,3 +1741,16 @@ table.reference tr a{
 .left {
     float: left !important;
 }
+
+tabs__header__item {
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    padding: 10px;
+    color:#666;
+}
+tabs__header__item:hover,tabs__header__item:is-active {
+    color:#56af45;
+}

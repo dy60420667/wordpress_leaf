@@ -20,17 +20,15 @@ while ( have_posts() ) : the_post();
 			<h1> <?php the_title();?></h1>
 			<div class="single-cat"> <span>发布时间：</span> <?php the_time('Y-n-j');?></div>
 		  </div>
-		  <!--AD id:single_1002-->
-		  
-		   <!--AD.end-->
+
 		  <div class="content">
 			<div class="content_left">
 				<?php the_content();?>
 			</div>
 		  </div>
-	  
-	  
-<?php 
+
+
+<?php
 endwhile;
 /** 评论模板 **/
 comments_template();
