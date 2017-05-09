@@ -17,7 +17,7 @@ class widget_postlist extends WP_Widget {
 
 		$style = ' class="'.$showstyle.'"';
 		echo $before_widget;
-		echo $before_title.$title.$after_title; 
+		echo $before_title.$title.$after_title;
 		echo '<ul'.$style.'>';
 
 		$args = array(
@@ -28,11 +28,11 @@ class widget_postlist extends WP_Widget {
 			'ignore_sticky_posts' => 1
 		);
 		query_posts($args);
-		while (have_posts()) : the_post(); 
+		while (have_posts()) : the_post();
 		?>
-		<li><a<?php echo hui_target_blank(); ?> href="<?php the_permalink(); ?>"><?php if( $showstyle!=='items-03' ) echo '<span class="thumbnail">'.hui_get_thumbnail().'</span>'; ?><span class="text"><?php the_title(); echo get_the_subtitle(); ?></span><?php echo hui_get_views($class='text-muted post-views') ?></a></li>
+		<li><a<?php echo hui_target_blank(); ?> href="<?php the_permalink(); ?>"><?php if( $showstyle!=='items-03' ) echo '<span class="thumbnail">'.hui_get_thumbnail().'</span>'; ?><span class="text"><?php the_title(); echo get_the_subtitle(); ?></span><?php if( $showstyle!=='items-03' )  echo hui_get_views($class='text-muted post-views') ?></a></li>
 		<?php
-			
+
 		endwhile; wp_reset_query();
 
 		echo '</ul>';
@@ -41,12 +41,12 @@ class widget_postlist extends WP_Widget {
 	}
 
 	function form( $instance ) {
-		$defaults = array( 
-			'title' => __('最新文章', 'haoui'), 
-			'limit' => 6, 
-			'cat' => '', 
-			'orderby' => 'date', 
-			'showstyle' => 'items-01' 
+		$defaults = array(
+			'title' => __('最新文章', 'haoui'),
+			'limit' => 6,
+			'cat' => '',
+			'orderby' => 'date',
+			'showstyle' => 'items-01'
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
 ?>
@@ -89,7 +89,7 @@ class widget_postlist extends WP_Widget {
 				<input style="width:100%;" id="<?php echo $this->get_field_id('limit'); ?>" name="<?php echo $this->get_field_name('limit'); ?>" type="number" value="<?php echo $instance['limit']; ?>" size="24" />
 			</label>
 		</p>
-		
+
 	<?php
 	}
 }

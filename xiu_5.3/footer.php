@@ -29,7 +29,7 @@
 	<script>
 	    function show_date_time() {
 	        window.setTimeout("show_date_time()", 1000);
-	        BirthDay = new Date("3/30/2017 00:00:01");
+	        BirthDay = new Date("9/1/2016 00:00:01");
 	        today = new Date();
 	        timeold = (today.getTime() - BirthDay.getTime());
 	        sectimeold = timeold / 1000
