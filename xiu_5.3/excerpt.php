@@ -1,12 +1,12 @@
 <?php
-/* 
+/*
  * list excerpt
  * ====================================================
 */
 
 $etype = _hui('list_type');
 
-while ( have_posts() ) : the_post(); 
+while ( have_posts() ) : the_post();
 	$classname = '';
 	$focuscode = '';
 
@@ -56,14 +56,14 @@ while ( have_posts() ) : the_post();
 	    '<p class="note">'.hui_get_excerpt_content().'</p>',
 	    '<p class="text-muted views">';
 	    if( _hui('post_link_excerpt_s') ) hui_post_link();
-	    echo hui_get_views(), 
+	    echo hui_get_views(),
 	    ($p_meta && $p_meta['comm']) ? '<span class="post-comments">'.hui_get_comment_number().'</span>' : '',
 	    hui_get_post_like($class='post-like'),
-	    the_tags('<span class="post-tags">'.__('标签：', 'haoui'), ' / ', '</span>'), 
+	    the_tags('<span class="post-tags">'.__('标签：', 'haoui'), ' / ', '</span>'),
 	    '</p>';
 
 	echo '</article>';
 
-endwhile; 
+endwhile;
 hui_paging();
 wp_reset_query();
