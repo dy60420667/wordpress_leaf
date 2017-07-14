@@ -2210,6 +2210,7 @@ body .bd_weixin_popup .bd_weixin_popup_foot{display: none;}
     line-height: 23px;
     background:#ffffff;
     box-shadow: 1px 1px 1px 1px #756A6A, 0px 0px 2px 0px black;
+    z-index:999;
 }
 
 #article-index strong {
