@@ -26,7 +26,7 @@
 <header class="header">
 <div class="wy-side-scroll">
 <?php } ?>
-//	<?php hui_logo(); ?>
+	<?php echo '<a href="'.get_bloginfo('url').'" class = "header_home">'.get_bloginfo('name').'</a>' ?>
 	<?php if( _hui('search_nav') || _hui('search_nav_m') ){
 		echo '<form method="get" class="search-form" action="'.esc_url( home_url( '/' ) ).'" ><input class="form-control" name="s" type="text" placeholder="输入关键字" value="'.htmlspecialchars($s).'"></form>';
 	} ?>
