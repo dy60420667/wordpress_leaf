@@ -1202,3 +1202,33 @@ function hui_get_filetype($filename) {
     $exten = explode('.', $filename);
     return end($exten);
 }
+
+
+/**
+ * 预处理文章内容
+ */
+function article_index($content) {
+
+	// 处理函数的逻辑部分和功能代码
+
+	$r = "/<h2>([^<]+)<\/h2>/im";
+	$ul_li = '';
+	$matches = array ();
+
+	if (preg_match_all($r, $content, $matches)) {
+		foreach ($matches[1] as $num => $title) {
+			$content = str_replace($matches[0][$num], '<h2 id="title-' . $num . '">' . $title . '</h2>', $content);
+			$ul_li .= '<li><a href="#title-' . $num . '" >' . $title . "</a></li>";
+		}
+
+		$content = "\n<div id='article-index'>" .
+		"<strong>文章目录</strong>" .
+		"<text id='text_yincang'> [ 隐藏 ] </text>
+		                     <ul id='index-ul' style='display:block'>\n" . $ul_li . "</ul>
+				                  </div>\n" . $content;
+	}
+
+	return $content;
+}
+
+add_filter('the_content', 'article_index');

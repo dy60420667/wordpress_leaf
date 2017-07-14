@@ -22,6 +22,53 @@
 		</header>
 		<?php if( _hui('ads_post_01_s') ) echo '<div class="ads ads-content ads-post">'.hui_get_adcode('ads_post_01').'</div>'; ?>
 		<article class="article-content">
+		<script type="text/javascript">
+		$(function() {
+		    var ie6 = document.all;
+		    var dv = $('#article-index'),st;
+		    dv.attr('otop', dv.offset().top); //存储原来的距离顶部的距离
+		    console.log(dv.offset().left);
+		    dv.attr('oleft', dv.offset().left); //存储原来的距离顶部的距离
+		    $(window).scroll(function() {
+		        st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
+		        if (st > parseInt(dv.attr('otop'))) {
+		            if (ie6) { //IE6不支持fixed属性，所以只能靠设置position为absolute和top实现此效果
+		                dv.css({
+		                    position: 'absolute',
+		                    top: st,
+		                    left:dv.offset().left
+		                });
+		            } else if (dv.css('position') != 'fixed') dv.css({
+		                'position': 'fixed',
+		                top: 0,
+		                left:dv.offset().left
+		            });
+		        } else if (dv.css('position') != 'static') dv.css({
+		            'position': 'static'
+
+		        });
+		    });
+		});
+
+		$(function() {
+			$(text_yincang).click(function(){
+			  var target=document.getElementById('text_yincang');
+		      var goal = document.getElementById('index-ul');
+
+	            if (goal.style.display=="block"){
+	                goal.style.display="none";
+	                target.innerText=" [ 显示 ] ";
+
+	            } else {
+	                goal.style.display="block";
+	                target.innerText=' [ 隐藏 ] ';
+	            }
+			});
+		});
+
+	</script>
+
+
 			<?php the_content(); ?>
 			<?php wp_link_pages('link_before=<span>&link_after=</span>&before=<div class="article-paging">&after=</div>&next_or_number=number'); ?>
         	<?php if( _hui('post_copyright_s') ) echo '<p class="post-copyright">'._hui('post_copyright').'：<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> &raquo; <a href="'.get_permalink().'">'.get_the_title().get_the_subtitle().'</a></p>'; ?>
@@ -33,7 +80,7 @@
 		</div>
 
 		<?php echo _hui('share_single_s')&&_hui('share_single_code') ? '<div class="share-single">'. _hui('share_single_code') .'</div>' : '' ?>
-		
+
 		<div class="article-tags">
 			<?php the_tags(__('标签：', 'haoui'),'',''); ?>
 		</div>
@@ -43,7 +90,7 @@
 		</nav>
 		<?php if( _hui('ads_post_02_s') ) echo '<div class="ads ads-content ads-related">'.hui_get_adcode('ads_post_02').'</div>'; ?>
 		<?php if( _hui('post_related_s') ) hui_posts_related( _hui('related_title'), _hui('post_related_n'), (_hui('post_related_model') ? _hui('post_related_model') : 'thumb') ) ?>
-		<?php 
+		<?php
 			if( !$paged && _hui('sticky_post_s') ) {
 				hui_moloader('hui_posts_sticky');
 			}
